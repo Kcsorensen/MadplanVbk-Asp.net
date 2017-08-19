@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MadplanVbkAsp.Data;
-using MadplanVbkAsp.Interface;
 
 namespace MadplanVbkAsp
 {
@@ -34,8 +30,8 @@ namespace MadplanVbkAsp
             // Add framework services.
             services.AddMvc();
 
-            services.AddEntityFrameworkSqlServer().AddDbContext<SqlDbContext>(options => 
-                options.UseSqlServer(Configuration["DefaultConnection"]));
+            //services.AddEntityFrameworkSqlServer().AddDbContext<SqlDbContext>(options => 
+            //    options.UseSqlServer(Configuration["DefaultConnection"]));
 
             services.AddScoped<IFoodData, SqlFoodData>();
         }

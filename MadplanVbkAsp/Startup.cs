@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Interface;
 
 namespace MadplanVbkAsp
 {
@@ -18,6 +21,7 @@ namespace MadplanVbkAsp
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("SqlInfo.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -29,6 +33,11 @@ namespace MadplanVbkAsp
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddEntityFrameworkSqlServer().AddDbContext<SqlDbContext>(options => 
+                options.UseSqlServer(Configuration["DefaultConnection"]));
+
+            services.AddScoped<IFoodData, SqlFoodData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
@@ -24,7 +27,7 @@ namespace MadplanVbkAsp.Extensions
 
         #region String to Double Converter
 
-        public static string ConvertToDouble(this string stringVal)
+        public static double ConvertToDouble(this string stringVal)
         {
             var doubleVal = double.NaN;
 
@@ -33,10 +36,65 @@ namespace MadplanVbkAsp.Extensions
                 doubleVal = Convert.ToDouble(stringVal, new CultureInfo("da-DK"));
             }
 
-            return doubleVal.ToString();
+            return doubleVal;
+        }
+
+        public static double ToDouble(this string stringVal)
+        {
+            var doubleVal = double.NaN;
+
+            if (!string.IsNullOrWhiteSpace(stringVal))
+            {
+                doubleVal = Convert.ToDouble(stringVal);
+            }
+
+            return doubleVal;
         }
 
         #endregion
+
+        public static void EnsureSeedData(this SqlDbContext context)
+        {
+            // Evt
+            if (!context.Foods.Any())
+            {
+
+            }
+
+            context.Foods.Add(new Food
+            {
+                Name = "test",
+                QuantityConverter = new QuantityConverter
+                {
+                    Quantities = new List<Quantity>
+                        {
+                            new Quantity{ Name = QuantityType.dl, Value = 2},
+                            new Quantity{ Name = QuantityType.dråbe, Value = 1},
+                            new Quantity{ Name = QuantityType.gram, Value = 0.5},
+                            new Quantity{ Name = QuantityType.pakke, Value = 0.25},
+                        }
+                },
+
+            });
+
+            context.Foods.Add(new Food
+            {
+                Name = "test2",
+                QuantityConverter = new QuantityConverter
+                {
+                    Quantities = new List<Quantity>
+                        {
+                            new Quantity{ Name = QuantityType.dl, Value = 2},
+                            new Quantity{ Name = QuantityType.dråbe, Value = 1},
+                            new Quantity{ Name = QuantityType.gram, Value = 0.5},
+                            new Quantity{ Name = QuantityType.pakke, Value = 0.25},
+                        }
+                },
+
+            });
+
+            context.SaveChanges();
+        }
 
     }
 }

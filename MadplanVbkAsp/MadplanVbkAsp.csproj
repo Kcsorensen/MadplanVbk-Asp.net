@@ -22,6 +22,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +31,16 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\FoodDatabase.csv" />
+    <EmbeddedResource Include="Resources\FoodDatabase_dk.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ClassLibrary2">
+      <HintPath>..\..\MadplanVBK\Madplan VBK\ClassLibrary2\bin\Debug\ClassLibrary2.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>..\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

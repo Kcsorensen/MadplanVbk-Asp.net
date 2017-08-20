@@ -1,4 +1,5 @@
 ﻿using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Extensions;
 using MadplanVbkAsp.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,8 +31,12 @@ namespace MadplanVbkAsp
             // Add framework services.
             services.AddMvc();
 
-            //services.AddEntityFrameworkSqlServer().AddDbContext<SqlDbContext>(options => 
-            //    options.UseSqlServer(Configuration["DefaultConnection"]));
+            services.AddDbContext<SqlDbContext>(options =>
+                options.UseMySql(Configuration["MySqlConnection"]));
+
+            
+
+
 
             services.AddScoped<IFoodData, SqlFoodData>();
         }
@@ -46,6 +51,13 @@ namespace MadplanVbkAsp
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
+
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    var context = serviceScope.ServiceProvider.GetService<SqlDbContext>();
+                    context.EnsureSeedData();
+
+                }
             }
             else
             {
@@ -53,6 +65,9 @@ namespace MadplanVbkAsp
             }
 
             app.UseStaticFiles();
+
+
+
 
             app.UseMvc(routes =>
             {

@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel.DataAnnotations;
+//using System.Linq;
+//using System.Threading.Tasks;
 
-namespace MadplanVbkAsp.Models
-{
-    public class Quantity
-    {
-        public int QuantityId { get; set; }
+//namespace MadplanVbkAsp.Models
+//{
+//    public class Quantity
+//    {
+//        [Required]
+//        public string Name { get; set; }
 
-        [MaxLength(255)]
-        [Required]
-        public string Name { get; set; }
-
-        public double Value { get; set; }
-    }
-}
+//        [Required]
+//        public double Value { get; set; }
+//    }
+//}

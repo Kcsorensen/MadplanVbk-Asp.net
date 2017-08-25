@@ -1,6 +1,6 @@
 ﻿using MadplanVbkAsp.Interface;
-using MadplanVbkAsp.Models;
 using Microsoft.AspNetCore.Mvc;
+using SharedLib.Models;
 using System.Collections.Generic;
 using System.Linq;
 

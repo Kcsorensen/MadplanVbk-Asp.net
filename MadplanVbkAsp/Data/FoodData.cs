@@ -1,17 +1,20 @@
-﻿using MadplanVbkAsp.Interface;
-using MadplanVbkAsp.Models;
+﻿using CsvHelper;
+using MadplanVbkAsp.Interface;
+using MongoDB.Driver;
+using SharedLib.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Text;
 
 namespace MadplanVbkAsp.Data
 {
-    public class SqlFoodData : IFoodData
+    public class FoodData : IFoodData
     {
-        private SqlDbContext _db;
-
-        public SqlFoodData(SqlDbContext db)
+        public FoodData()
         {
-            _db = db;
+            
         }
 
         public void Add(Food newFood)
@@ -26,9 +29,11 @@ namespace MadplanVbkAsp.Data
 
         public IEnumerable<Food> GetAll()
         {
-            //if (!_db.Foods.Any())
+            MongoDbContext dbContext = new MongoDbContext();
+
+            //if (dbContext.Foods.Find(a => true).Count() == 0)
             //{
-            //    var assembly = typeof(SqlFoodData).GetTypeInfo().Assembly;
+            //    var assembly = typeof(FoodData).GetTypeInfo().Assembly;
 
             //    Stream stream = assembly.GetManifestResourceStream("MadplanVbkAsp.Resources.FoodDatabase.csv");
 
@@ -51,10 +56,9 @@ namespace MadplanVbkAsp.Data
             //    {
             //        if (counter == 1)
             //        {
-            //            _db.Foods.Add(new Food
+            //            dbContext.Foods.InsertOne(new Food
             //            {
             //                Name = csv.GetField<string>(0),
-            //                FoodId = csv.GetField<int>(1),
             //                Svind = csv.GetField<string>(2),
             //                EnergiKj = csv.GetField<string>(3),
             //                EnergiKcal = csv.GetField<string>(4),
@@ -240,14 +244,11 @@ namespace MadplanVbkAsp.Data
             //        counter++;
             //    }
 
-            //    _db.SaveChanges();
             //}
 
-            //var list = _db.Foods;
+            var list = dbContext.Foods.Find(a => true).ToList();
 
-            //return list;
-
-            return null;
+            return list;
         }
     }
 }

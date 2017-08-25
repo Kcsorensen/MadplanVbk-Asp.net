@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace MadplanVbkAsp
 {
@@ -20,6 +21,7 @@ namespace MadplanVbkAsp
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddJsonFile("SqlInfo.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
 
@@ -31,14 +33,11 @@ namespace MadplanVbkAsp
             // Add framework services.
             services.AddMvc();
 
-            services.AddDbContext<SqlDbContext>(options =>
-                options.UseMySql(Configuration["MySqlConnection"]));
+            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:DatabaseName").Value;
+            MongoDbContext.IsSSL = Convert.ToBoolean(Configuration.GetSection("MongoConnection:IsSSL").Value);
 
-            
-
-
-
-            services.AddScoped<IFoodData, SqlFoodData>();
+            services.AddScoped<IFoodData, FoodData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,9 +53,8 @@ namespace MadplanVbkAsp
 
                 using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    var context = serviceScope.ServiceProvider.GetService<SqlDbContext>();
+                    var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
                     context.EnsureSeedData();
-
                 }
             }
             else
@@ -65,9 +63,6 @@ namespace MadplanVbkAsp
             }
 
             app.UseStaticFiles();
-
-
-
 
             app.UseMvc(routes =>
             {

@@ -23,6 +23,7 @@
     <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
+    <PackageReference Include="Portable.DataAnnotations" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,11 +36,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\..\Madplan\SharedLib\SharedLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MadplanVBK\Madplan VBK\SharedLib\SharedLib\SharedLib.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

@@ -1964,6 +1964,15 @@
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
         }
       },
+      "Portable.DataAnnotations/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+netcore45+wp8+wpa81/Portable.DataAnnotations.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+netcore45+wp8+wpa81/Portable.DataAnnotations.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -6010,6 +6019,125 @@
         "lib/netstandard1.3/Pomelo.JsonObject.dll",
         "pomelo.jsonobject.1.1.1.nupkg.sha512",
         "pomelo.jsonobject.nuspec"
+      ]
+    },
+    "Portable.DataAnnotations/1.0.0": {
+      "sha512": "uDq5QgE4onGwySXfDrkOHMcFpMFiB3e4op855EuYpDJOmeo1nGiqSo6FY0v3UY4uJyzxlLitbKnGIbShDX6v4w==",
+      "type": "package",
+      "path": "portable.dataannotations/1.0.0",
+      "files": [
+        "lib/MonoAndroid/Portable.DataAnnotations.dll",
+        "lib/MonoAndroid/Portable.DataAnnotations.pdb",
+        "lib/Xamarin.Mac20/Portable.DataAnnotations.dll",
+        "lib/Xamarin.Mac20/Portable.DataAnnotations.pdb",
+        "lib/Xamarin.iOS10/Portable.DataAnnotations.dll",
+        "lib/Xamarin.iOS10/Portable.DataAnnotations.pdb",
+        "lib/net40/Portable.DataAnnotations.dll",
+        "lib/net40/Portable.DataAnnotations.pdb",
+        "lib/net45/Portable.DataAnnotations.dll",
+        "lib/net45/Portable.DataAnnotations.pdb",
+        "lib/netcore45/Portable.DataAnnotations.dll",
+        "lib/netcore45/Portable.DataAnnotations.pdb",
+        "lib/portable-net40+netcore45+sl5+wp8+wpa81/Portable.DataAnnotations.dll",
+        "lib/portable-net40+netcore45+sl5+wp8+wpa81/Portable.DataAnnotations.pdb",
+        "lib/portable-net40+netcore45/Portable.DataAnnotations.dll",
+        "lib/portable-net40+netcore45/Portable.DataAnnotations.pdb",
+        "lib/portable-net45+netcore45+wp8+wpa81/Portable.DataAnnotations.dll",
+        "lib/portable-net45+netcore45+wp8+wpa81/Portable.DataAnnotations.pdb",
+        "lib/portable-net45+netcore45+wpa81/Portable.DataAnnotations.dll",
+        "lib/portable-net45+netcore45+wpa81/Portable.DataAnnotations.pdb",
+        "lib/sl5/Portable.DataAnnotations.dll",
+        "lib/sl5/Portable.DataAnnotations.pdb",
+        "lib/wp8/Portable.DataAnnotations.dll",
+        "lib/wp8/Portable.DataAnnotations.pdb",
+        "lib/wpa81/Portable.DataAnnotations.dll",
+        "lib/wpa81/Portable.DataAnnotations.pdb",
+        "portable.dataannotations.1.0.0.nupkg.sha512",
+        "portable.dataannotations.nuspec",
+        "src/Portable.DataAnnotations.Net40/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.Net40/Resources/DataAnnotationsResources.Designer.cs",
+        "src/Portable.DataAnnotations.Net40/TypeForwards.cs",
+        "src/Portable.DataAnnotations.Net40/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.Net40/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.Net40/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.Net40Portable/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.Net40Portable/Resources/DataAnnotationsResources.Designer.cs",
+        "src/Portable.DataAnnotations.Net45/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.Net45/TypeForwards.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.Net45/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.Net45Portable/DataType.cs",
+        "src/Portable.DataAnnotations.Net45Portable/GlobalSuppressions.cs",
+        "src/Portable.DataAnnotations.Net45Portable/IValidatableObject.cs",
+        "src/Portable.DataAnnotations.Net45Portable/LocalizableString.cs",
+        "src/Portable.DataAnnotations.Net45Portable/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.Net45Portable/Resources/DataAnnotationsResources.Designer.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributeStore.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/AssociationAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/BindableTypeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/ConcurrencyCheckAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/CreditCardAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/CustomValidationAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/DataTypeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/DisplayAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/DisplayColumnAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/DisplayFormatAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/EditableAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/EmailAddressAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/EnumDataTypeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/FilterUIHintAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/KeyAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/MaxLengthAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/MetadataTypeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/MinLengthAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/PhoneAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/RangeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/RegularExpressionAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/RequiredAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/ColumnAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/ComplexTypeAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/DatabaseGeneratedAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/DatabaseGeneratedOption.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/ForeignKeyAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/InversePropertyAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/NotMappedAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/Schema/TableAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/StringLengthAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/TimestampAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/UIHintAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/UrlAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationAttributes/ValidationAttribute.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationContext.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationException.cs",
+        "src/Portable.DataAnnotations.Net45Portable/ValidationResult.cs",
+        "src/Portable.DataAnnotations.Net45Portable/Validator.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.Net45Portable/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/Resources/DataAnnotationsResources.Designer.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/TypeForwards.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/CreditCardAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/EmailAddressAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/MaxLengthAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/MinLengthAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/PhoneAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/ValidationAttributes/UrlAttribute.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/Portable.DataAnnotations.WindowsRuntime/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/Portable.DataAnnotations.Xamarin/Properties/AssemblyInfo.cs",
+        "src/Portable.DataAnnotations.Xamarin/Resources/DataAnnotationsResources.Designer.cs"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -11044,8 +11172,8 @@
     },
     "SharedLib/1.0.0": {
       "type": "project",
-      "path": "../../MadplanVBK/Madplan VBK/SharedLib/SharedLib/SharedLib.csproj",
-      "msbuildProject": "../../MadplanVBK/Madplan VBK/SharedLib/SharedLib/SharedLib.csproj"
+      "path": "../../Madplan/SharedLib/SharedLib.csproj",
+      "msbuildProject": "../../Madplan/SharedLib/SharedLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11062,6 +11190,7 @@
       "MongoDB.Driver >= 2.4.4",
       "Newtonsoft.Json >= 10.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 1.1.2",
+      "Portable.DataAnnotations >= 1.0.0",
       "SharedLib >= 1.0.0"
     ]
   },
@@ -11095,8 +11224,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\kcsorensen\\Documents\\GitHub\\MadplanVBK\\Madplan VBK\\SharedLib\\SharedLib\\SharedLib.csproj": {
-              "projectPath": "C:\\Users\\kcsorensen\\Documents\\GitHub\\MadplanVBK\\Madplan VBK\\SharedLib\\SharedLib\\SharedLib.csproj"
+            "C:\\Users\\kcsorensen\\Documents\\GitHub\\Madplan\\SharedLib\\SharedLib.csproj": {
+              "projectPath": "C:\\Users\\kcsorensen\\Documents\\GitHub\\Madplan\\SharedLib\\SharedLib.csproj"
             }
           }
         }
@@ -11142,6 +11271,10 @@
           "Microsoft.VisualStudio.Web.BrowserLink": {
             "target": "Package",
             "version": "1.1.2"
+          },
+          "Portable.DataAnnotations": {
+            "target": "Package",
+            "version": "1.0.0"
           },
           "Microsoft.AspNetCore.Mvc": {
             "target": "Package",

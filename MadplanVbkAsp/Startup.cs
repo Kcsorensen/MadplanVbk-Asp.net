@@ -38,6 +38,7 @@ namespace MadplanVbkAsp
             MongoDbContext.IsSSL = Convert.ToBoolean(Configuration.GetSection("MongoConnection:IsSSL").Value);
 
             services.AddScoped<IFoodData, FoodData>();
+            services.AddScoped<IRecipeData, RecipeData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

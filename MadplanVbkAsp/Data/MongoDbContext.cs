@@ -37,5 +37,13 @@ namespace MadplanVbkAsp.Data
                 return _database.GetCollection<Food>("Foods");
             }
         }
+
+        public IMongoCollection<Recipe> Recipes
+        {
+            get
+            {
+                return _database.GetCollection<Recipe>("Recipes");
+            }
+        }
     }
 }

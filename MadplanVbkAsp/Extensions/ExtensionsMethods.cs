@@ -1,5 +1,7 @@
 ﻿using CsvHelper;
 using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Interface;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using SharedLib.Models;
 using System;
@@ -57,21 +59,60 @@ namespace MadplanVbkAsp.Extensions
 
         public static void EnsureSeedData(this MongoDbContext context)
         {
-            MongoDbContext dbContext = new MongoDbContext();
+            #region Initialize Db
+
+            //IFoodData foodData = new FoodData();
+            //foodData.GetAll();
+
+            //IRecipeData recipeData = new RecipeData();
+            //recipeData.GetAll();
+
+            #endregion
+
+            //var dbContext = new MongoDbContext();
+
+            //var recipes = dbContext.Recipes;
+
+            //var Egg = dbContext.Foods.Find(a => a.FoodId == 1159).First();
+
+            //Egg.Name = "Testing æg";
+
+            //var filter = Builders<Recipe>.Filter;
+            //var test = filter.ElemMatch(r => r.Ingredients, i => i.Food.Id == Egg.Id);
+            //var recipe = recipes.Find(test).SingleOrDefault();
+
+            //var update = Builders<Recipe>.Update;
+
+            //var setter = update.Set(r => r.Ingredients[-1].Food, Egg);
+
+            //recipes.UpdateOne(test, setter);
+
+            //foreach (var recipe in recipes)
+            //{
+            //    if (recipe.Ingredients.Any(a => a.Food.Id == Egg.Id))
+            //    {
+            //        var filter = Builders<Recipe>.Filter.Where(a =
+
+            //        var ingredient = recipe.Ingredients.Where(a => a.Food.Id == Egg.Id).First();
 
 
-            //var recipes = dbContext.Recipes.Find(a => true).ToList();
 
-            //var food = dbContext.Foods.Find(a => true).ToList();
+            //        recipe.Ingredients.Remove(ingredient);
 
-            //var test = from r in recipes.First().Ingredients
-            //           join f in food on r.FoodId equals f.Id
-            //           select new { r, f };
+            //        ingredient.Food = Egg;
 
-            //var test2 = from r in recipes.First().Ingredients
-            //            from f in food
-            //            where r.FoodId == f.Id
-            //            select 
+            //        recipe.Ingredients.Add(ingredient);
+
+            //        //dbContext.Recipes.ReplaceOne()
+
+            //    } 
+
+            //}
+
+            //var test = Builders<Recipe>.Filter.Where(a => a.Ingredients.Where(b => b.Food.Id == Egg.Id))
+
+
         }
     }
+
 }

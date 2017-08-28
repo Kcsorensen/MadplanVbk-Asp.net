@@ -27,7 +27,7 @@ namespace MadplanVbkAsp.Data
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Food> GetAll()
+        public List<Food> GetAll()
         {
             MongoDbContext dbContext = new MongoDbContext();
 

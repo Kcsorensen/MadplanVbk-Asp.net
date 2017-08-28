@@ -5,7 +5,7 @@ namespace MadplanVbkAsp.Interface
 {
     public interface IFoodData
     {
-        IEnumerable<Food> GetAll();
+        List<Food> GetAll();
         Food Get(int id);
         void Add(Food newFood);
     }

@@ -20,6 +20,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.4.4" />
     <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
@@ -36,11 +37,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Madplan\SharedLib\SharedLib.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\..\MadplanVBK\Madplan\SharedLib\SharedLib.csproj" />
   </ItemGroup>
 
 </Project>

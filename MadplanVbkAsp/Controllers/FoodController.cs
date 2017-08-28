@@ -22,7 +22,7 @@ namespace MadplanVbkAsp.Controllers
         [HttpGet]
         public List<Food> GetAll()
         {
-            return _foodData.GetAll().ToList();
+            return _foodData.GetAll();
         }
 
         // GET api/values/5

@@ -11172,8 +11172,8 @@
     },
     "SharedLib/1.0.0": {
       "type": "project",
-      "path": "../../Madplan/SharedLib/SharedLib.csproj",
-      "msbuildProject": "../../Madplan/SharedLib/SharedLib.csproj"
+      "path": "../../MadplanVBK/Madplan/SharedLib/SharedLib.csproj",
+      "msbuildProject": "../../MadplanVBK/Madplan/SharedLib/SharedLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11187,6 +11187,7 @@
       "Microsoft.NETCore.App >= 1.1.2",
       "Microsoft.VisualStudio.Web.BrowserLink >= 1.1.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 1.1.1",
+      "MongoDB.Bson >= 2.4.4",
       "MongoDB.Driver >= 2.4.4",
       "Newtonsoft.Json >= 10.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 1.1.2",
@@ -11224,8 +11225,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\kcsorensen\\Documents\\GitHub\\Madplan\\SharedLib\\SharedLib.csproj": {
-              "projectPath": "C:\\Users\\kcsorensen\\Documents\\GitHub\\Madplan\\SharedLib\\SharedLib.csproj"
+            "C:\\Users\\kcsorensen\\Documents\\GitHub\\MadplanVBK\\Madplan\\SharedLib\\SharedLib.csproj": {
+              "projectPath": "C:\\Users\\kcsorensen\\Documents\\GitHub\\MadplanVBK\\Madplan\\SharedLib\\SharedLib.csproj"
             }
           }
         }
@@ -11262,6 +11263,10 @@
           "CsvHelper": {
             "target": "Package",
             "version": "2.16.3"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "2.4.4"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

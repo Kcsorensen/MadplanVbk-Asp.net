@@ -1014,57 +1014,16 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.7,
                     Persons = 1,
                     Page = 192,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Selleri.GetDescription(),
-                        Quantity = 0.25,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Torsk.GetDescription(),
-                        Quantity = 120,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Gulerod.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Persillerod.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rødbeder.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Olivenolie.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Honning.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Citron.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk
-                    },
+                    addFoodToRecipe(IngredientHelper.Selleri.GetDescription(), 0.25, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Torsk.GetDescription(), 120, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Gulerod.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Persillerod.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Rødbeder.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Olivenolie.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Honning.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Citron.GetDescription(), 1, QuantityType.stk),
                 }
                 });
 
@@ -1076,87 +1035,21 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.5,
                     Persons = 1,
                     Page = 194,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rejer.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Forårsløg.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Peberfrugt.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Basilikum.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Fennikel.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Sesamfrø.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rispapir.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.plade
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Fishsauce.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Lime.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Honning.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Chili.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.SaltedePeanuts.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.tsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Jordnøddeolie.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
+                    addFoodToRecipe(IngredientHelper.Rejer.GetDescription(), 100, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Forårsløg.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Peberfrugt.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Basilikum.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Fennikel.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Sesamfrø.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Rispapir.GetDescription(), 2, QuantityType.plade),
+                    addFoodToRecipe(IngredientHelper.Fishsauce.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Lime.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Honning.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Chili.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.SaltedePeanuts.GetDescription(), 1, QuantityType.tsk),
+                    addFoodToRecipe(IngredientHelper.Jordnøddeolie.GetDescription(), 1, QuantityType.spsk),
                 }
                 });
 
@@ -1168,87 +1061,21 @@ namespace MadplanVbkAsp.Data
                     Ratio = 1.3,
                     Persons = 4,
                     Page = 196,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.HakketOksekød.GetDescription(),
-                        Quantity = 500,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Æg.GetDescription(),
-                        Quantity = 3,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mælk.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.dl,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rugflager.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Æblemost.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.dl,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Hvidløg.GetDescription(),
-                        Quantity = 4,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rapsolie.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Edamamebønner.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Hytteost.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.dl
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Honning.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Citron.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Dild.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Spidskål.GetDescription(),
-                        Quantity = 80,
-                        DefaultQuantityType = QuantityType.gram
-                    },
+                    addFoodToRecipe(IngredientHelper.HakketOksekød.GetDescription(), 500, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Æg.GetDescription(), 3, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Mælk.GetDescription(), 1, QuantityType.dl),
+                    addFoodToRecipe(IngredientHelper.Rugflager.GetDescription(), 100, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Æblemost.GetDescription(), 1, QuantityType.dl),
+                    addFoodToRecipe(IngredientHelper.Hvidløg.GetDescription(), 4, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Rapsolie.GetDescription(), 2, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Edamamebønner.GetDescription(), 100, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Hytteost.GetDescription(), 1, QuantityType.dl),
+                    addFoodToRecipe(IngredientHelper.Honning.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Citron.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Dild.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Spidskål.GetDescription(), 80, QuantityType.gram),
                 }
                 });
 
@@ -1260,45 +1087,14 @@ namespace MadplanVbkAsp.Data
                     Ratio = 1.02,
                     Persons = 1,
                     Page = 198,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Torsk.GetDescription(),
-                        Quantity = 150,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Tomat.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rødløg.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Persille.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rugkerner.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Oliven.GetDescription(),
-                        Quantity = 7,
-                        DefaultQuantityType = QuantityType.stk
-                    },
+                    addFoodToRecipe(IngredientHelper.Torsk.GetDescription(), 150, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Tomat.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Rødløg.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Persille.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Rugkerner.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Oliven.GetDescription(), 7, QuantityType.stk),
                 }
                 });
 
@@ -1310,47 +1106,15 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.9,
                     Persons = 1,
                     Page = 200,
-                    Ingredients = new ObservableCollection<Food>()
-                {
-                    new Food()
+                    Ingredients = new ObservableCollection<Ingredient>()
                     {
-                        Name = IngredientHelper.Pizza.GetDescription(),
-                        Quantity = 0.25,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Kyllingbryst.GetDescription(),
-                        Quantity = 120,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Gulerod.GetDescription(),
-                        Quantity = 150,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Olivenolie.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Citron.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Basilikum.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                }
+                        addFoodToRecipe(IngredientHelper.Pizza.GetDescription(), 0.25, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Kyllingbryst.GetDescription(), 120, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Gulerod.GetDescription(), 150, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Olivenolie.GetDescription(), 0, QuantityType.Ingen),
+                        addFoodToRecipe(IngredientHelper.Citron.GetDescription(), 0.5, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Basilikum.GetDescription(), 0, QuantityType.Ingen),
+                    }
                 });
 
                 // Forårsruller med kål og kød
@@ -1361,52 +1125,16 @@ namespace MadplanVbkAsp.Data
                     Ratio = 1.3,
                     Persons = 2,
                     Page = 202,
-                    Ingredients = new ObservableCollection<Food>()
-                {
-                    new Food()
+                    Ingredients = new ObservableCollection<Ingredient>()
                     {
-                        Name = IngredientHelper.Kyllingbryst.GetDescription(),
-                        Quantity = 200,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rødkål.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Ingegær.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.tsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mandler.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Sojasovs.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Forårsrulledej.GetDescription(),
-                        Quantity = 4,
-                        DefaultQuantityType = QuantityType.plade,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Vindruekerneolie.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                }
+                        addFoodToRecipe(IngredientHelper.Kyllingbryst.GetDescription(), 200, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Rødkål.GetDescription(), 100, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Ingefær.GetDescription(), 1, QuantityType.tsk),
+                        addFoodToRecipe(IngredientHelper.Mandler.GetDescription(), 2, QuantityType.spsk),
+                        addFoodToRecipe(IngredientHelper.Sojasovs.GetDescription(), 2, QuantityType.spsk),
+                        addFoodToRecipe(IngredientHelper.Forårsrulledej.GetDescription(), 4, QuantityType.plade),
+                        addFoodToRecipe(IngredientHelper.Vindruekerneolie.GetDescription(), 0, QuantityType.Ingen),
+                    }
                 });
 
                 // Rodfrugter på panden med chorizopølser
@@ -1417,33 +1145,13 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.5,
                     Persons = 1,
                     Page = 204,
-                    Ingredients = new ObservableCollection<Food>()
-                {
-                    new Food()
+                    Ingredients = new ObservableCollection<Ingredient>()
                     {
-                        Name = IngredientHelper.Chorizopølser.GetDescription(),
-                        Quantity = 4,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Gulerod.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Persillerod.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rødløg.GetDescription(),
-                        Quantity = 0.25,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                }
+                        addFoodToRecipe(IngredientHelper.Chorizopølser.GetDescription(), 4, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Gulerod.GetDescription(), 1, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Persillerod.GetDescription(), 1, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Rødløg.GetDescription(), 0.25, QuantityType.stk),
+                    }
                 });
 
                 // Dumblings med fisk og grønt, hertil råkost
@@ -1454,63 +1162,18 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.7,
                     Persons = 1,
                     Page = 206,
-                    Ingredients = new ObservableCollection<Food>()
-                {
-                    new Food()
+                    Ingredients = new ObservableCollection<Ingredient>()
                     {
-                        Name = IngredientHelper.Blomkålsbuketter.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Broccoli.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Wontondej.GetDescription(),
-                        Quantity = 5,
-                        DefaultQuantityType = QuantityType.plade,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Torsk.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Sojasovs.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.tsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mandler.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.tsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Gulerod.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Spidskål.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Citron.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                }
+                        addFoodToRecipe(IngredientHelper.Blomkålsbuketter.GetDescription(), 50, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Broccoli.GetDescription(), 50, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Wontondej.GetDescription(), 5, QuantityType.plade),
+                        addFoodToRecipe(IngredientHelper.Torsk.GetDescription(), 100, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Sojasovs.GetDescription(), 1, QuantityType.tsk),
+                        addFoodToRecipe(IngredientHelper.Mandler.GetDescription(), 1, QuantityType.tsk),
+                        addFoodToRecipe(IngredientHelper.Gulerod.GetDescription(), 1, QuantityType.stk),
+                        addFoodToRecipe(IngredientHelper.Spidskål.GetDescription(), 50, QuantityType.gram),
+                        addFoodToRecipe(IngredientHelper.Citron.GetDescription(), 0.5, QuantityType.stk),
+                    }
                 });
 
                 // Kalv i øl og timian
@@ -1521,62 +1184,17 @@ namespace MadplanVbkAsp.Data
                     Ratio = 1.1,
                     Persons = 1,
                     Page = 208,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Kalvekotelet.GetDescription(),
-                        Quantity = 300,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Broccoli.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Spidskål.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Gulerod.GetDescription(),
-                        Quantity = 50,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Timian.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Sennep.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.tsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Radicchio.GetDescription(),
-                        Quantity = 0.25,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Øl.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Fuldkornsbrød.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.skive,
-                    },
+                    addFoodToRecipe(IngredientHelper.Kalvekotelet.GetDescription(), 300, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Broccoli.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Spidskål.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Gulerod.GetDescription(), 50, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Timian.GetDescription(), 2, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Sennep.GetDescription(), 1, QuantityType.tsk),
+                    addFoodToRecipe(IngredientHelper.Radicchio.GetDescription(), 0.25, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Øl.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Fuldkornsbrød.GetDescription(), 1, QuantityType.skive),
                 }
                 });
 
@@ -1588,46 +1206,14 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.8,
                     Persons = 1,
                     Page = 210,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Hjertesalat.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Kartofler.GetDescription(),
-                        Quantity = 80,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Forårsløg.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Olivenolie.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Vineddike.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Æg.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
+                    addFoodToRecipe(IngredientHelper.Hjertesalat.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Kartofler.GetDescription(), 80, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Forårsløg.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Olivenolie.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Vineddike.GetDescription(), 0, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Æg.GetDescription(), 2, QuantityType.stk),
                 }
                 });
 
@@ -1639,45 +1225,14 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.5,
                     Persons = 1,
                     Page = 212,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Edamamebønner.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.pose
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Hytteost.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.dl,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Honning.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Citron.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Dild.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Spidskål.GetDescription(),
-                        Quantity = 100,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
+                    addFoodToRecipe(IngredientHelper.Edamamebønner.GetDescription(), 0.5, QuantityType.pose),
+                    addFoodToRecipe(IngredientHelper.Hytteost.GetDescription(), 1, QuantityType.dl),
+                    addFoodToRecipe(IngredientHelper.Honning.GetDescription(), 1, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Citron.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Dild.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Spidskål.GetDescription(), 100, QuantityType.gram),
                 }
                 });
 
@@ -1689,50 +1244,15 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.8,
                     Persons = 1,
                     Page = 214,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.RødAppelsin.GetDescription(),
-                        Quantity = 0.0,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mynte.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Kartofler.GetDescription(),
-                        Quantity = 75,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Svinekotelet.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Honning.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Sojasovs.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mandler.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
+                    addFoodToRecipe(IngredientHelper.RødAppelsin.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Mynte.GetDescription(), 0.5, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Kartofler.GetDescription(), 75, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Svinekotelet.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Honning.GetDescription(), 0.5, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Sojasovs.GetDescription(), 0.5, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Mandler.GetDescription(), 1, QuantityType.spsk),
                 }
                 });
 
@@ -1744,38 +1264,13 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.9,
                     Persons = 1,
                     Page = 216,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Oksebøf.GetDescription(),
-                        Quantity = 150,
-                        DefaultQuantityType = QuantityType.gram
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Kartofler.GetDescription(),
-                        Quantity = 6,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Eddike.GetDescription(),
-                        Quantity = 0.5,
-                        DefaultQuantityType = QuantityType.dl,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Rosmarin.GetDescription(),
-                        Quantity = 2,
-                        DefaultQuantityType = QuantityType.spsk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Parmesanost.GetDescription(),
-                        Quantity = 20,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
+                    addFoodToRecipe(IngredientHelper.Oksebøf.GetDescription(), 150, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Kartofler.GetDescription(), 6, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Eddike.GetDescription(), 0.5, QuantityType.dl),
+                    addFoodToRecipe(IngredientHelper.Rosmarin.GetDescription(), 2, QuantityType.spsk),
+                    addFoodToRecipe(IngredientHelper.Parmesanost.GetDescription(), 20, QuantityType.gram),
                 }
                 });
 
@@ -1787,61 +1282,20 @@ namespace MadplanVbkAsp.Data
                     Ratio = 1.7,
                     Persons = 1,
                     Page = 218,
-                    Ingredients = new ObservableCollection<Food>()
+                    Ingredients = new ObservableCollection<Ingredient>()
                 {
-                    new Food()
-                    {
-                        Name = IngredientHelper.Fiskefilet.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Æg.GetDescription(),
-                        Quantity = 1,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Mysli.GetDescription(),
-                        Quantity = 25,
-                        DefaultQuantityType = QuantityType.gram,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Vindruekerneolie.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Radicchio.GetDescription(),
-                        Quantity = 0.25,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Drueagurker.GetDescription(),
-                        Quantity = 4,
-                        DefaultQuantityType = QuantityType.stk,
-                    },
-                    new Food()
-                    {
-                        Name = IngredientHelper.Dild.GetDescription(),
-                        Quantity = 0,
-                        DefaultQuantityType = QuantityType.Ingen,
-                        QuantityVisible = false
-                    },
+                    addFoodToRecipe(IngredientHelper.Fiskefilet.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Æg.GetDescription(), 1, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Musli.GetDescription(), 25, QuantityType.gram),
+                    addFoodToRecipe(IngredientHelper.Vindruekerneolie.GetDescription(), 0, QuantityType.Ingen),
+                    addFoodToRecipe(IngredientHelper.Radicchio.GetDescription(), 0.25, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Drueagurker.GetDescription(), 4, QuantityType.stk),
+                    addFoodToRecipe(IngredientHelper.Dild.GetDescription(), 0, QuantityType.Ingen),
                 }
                 });
 
                 #endregion
             }
-
-
-
-
 
             //#region Desserter
 

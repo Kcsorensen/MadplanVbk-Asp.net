@@ -1,6 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
+
 }
 
 <div class="container">
@@ -11,3 +12,26 @@
     </div>
 
 </div><!-- /.container -->
+
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ratio</th>
+                <th>Ingredients</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in Model.Recipes)
+            {
+                <tr>
+                    <td>@recipe.Name</td>
+                    <td>@recipe.Ratio</td>
+                    <td>@recipe.Ingredients.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

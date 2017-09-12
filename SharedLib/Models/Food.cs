@@ -1,5 +1,6 @@
 ﻿using SharedLib.Extensions;
 using System;
+using System.Collections.Generic;
 
 namespace SharedLib.Models
 {
@@ -341,8 +342,24 @@ namespace SharedLib.Models
 
         public Food()
         {
-            //Id = new Guid();
+
+        }
+
+        // Det er ikke muligt at køre disse koder i contructoren,
+        // da det vil skabes en duplikation af listen når FoodDb hentes fra skyen via JsonConvert.DeserializeObject
+        // Husk at Initialize kun skal anvendes i ASP.net.
+        public Food(bool use_this_when_not_deserializing)
+        {
+            Id = Guid.NewGuid();
+
             QuantityConverver = new QuantityConverter();
+            QuantityConverver.Quantities = new List<Quantity>();
+
+            foreach (var quantityType in QuantityType.Current.ListForQuantityConverter)
+            {
+                QuantityConverver.Quantities.Add(new Quantity() { Name = quantityType, Value = 0.0 });
+            }
+
             DefaultQuantityType = QuantityType.gram;
         }
     }

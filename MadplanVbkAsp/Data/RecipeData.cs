@@ -1,12 +1,12 @@
-﻿using MadplanVbkAsp.Interface;
+﻿using MadplanVbkAsp.Interfaces;
+using MongoDB.Driver;
+using SharedLib.Extensions;
+using SharedLib.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using SharedLib.Models;
-using MongoDB.Driver;
-using System.Collections.ObjectModel;
-using SharedLib.Extensions;
 
 namespace MadplanVbkAsp.Data
 {
@@ -1351,6 +1351,5 @@ namespace MadplanVbkAsp.Data
                 throw new Exception("addFoodToRecipe, Id: " + Id + " er ikke en int");
             }
         }
-
     }
 }

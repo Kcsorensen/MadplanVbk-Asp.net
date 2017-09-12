@@ -1,10 +1,11 @@
 ﻿using CsvHelper;
-using MadplanVbkAsp.Interface;
+using MadplanVbkAsp.Interfaces;
 using MongoDB.Driver;
 using SharedLib.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -14,7 +15,7 @@ namespace MadplanVbkAsp.Data
     {
         public FoodData()
         {
-            
+
         }
 
         public void Add(Food newFood)
@@ -56,7 +57,7 @@ namespace MadplanVbkAsp.Data
                 {
                     if (counter > 0)
                     {
-                        dbContext.Foods.InsertOne(new Food
+                        dbContext.Foods.InsertOne(new Food(true)
                         {
                             Name = csv.GetField<string>(0),
                             FoodId = csv.GetField<int>(1),

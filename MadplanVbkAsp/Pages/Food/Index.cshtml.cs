@@ -11,11 +11,11 @@ namespace MadplanVbkAsp.Pages.Food
 {
     public class IndexModel : PageModel
     {
-        public List<Recipe> Recipes { get; set; }
+        public List<SharedLib.Models.Food> Foods { get; set; }
 
-        public IndexModel(IRecipeData recipeData)
+        public IndexModel(IFoodData foodData)
         {
-            Recipes = recipeData.GetAll();
+            Foods = foodData.GetAll();
         }
 
         public void OnGet()

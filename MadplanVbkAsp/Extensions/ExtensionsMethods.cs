@@ -1,4 +1,9 @@
 ﻿using MadplanVbkAsp.Data;
+using Microsoft.AspNetCore.Http;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using Newtonsoft.Json;
+using SharedLib.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +27,38 @@ namespace MadplanVbkAsp.Extensions
         }
 
         #endregion
+
+        #region Session Extensions
+
+        public static void SetObjectAsJson(this ISession session, string key, object value)
+        {
+            // This setting is necessary to correct serialize of derived classes
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+            var serialize = JsonConvert.SerializeObject(value, settings);
+
+            session.SetString(key, serialize);
+        }
+
+        public static T GetObjectFromJson<T>(this ISession session, string key)
+        {
+            // This setting is necessary to correct deserialize of derived classes
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+
+            var value = session.GetString(key);
+
+            if (value == null)
+            {
+                return default(T);
+            }
+
+            var deserialize = JsonConvert.DeserializeObject<T>(value, settings);
+
+            return deserialize;
+        }
+
+        #endregion
+
 
         //#region String to Double Converter
 
@@ -64,6 +101,18 @@ namespace MadplanVbkAsp.Extensions
             #endregion
 
             //var dbContext = new MongoDbContext();
+
+            //var col = dbContext.Testings.Find(a => true).ToList();
+
+
+
+            //foreach (var item in col)
+            //{
+            //    var filter = Builders<Testing>.Filter.Eq("Id", item.Id);
+            //    var update = Builders<Testing>.Update.Set("Money", 100);
+            //    dbContext.Testings.UpdateOne(filter, update);
+            //}
+
 
             //var recipes = dbContext.Recipes;
 

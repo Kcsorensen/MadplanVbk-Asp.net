@@ -25,6 +25,7 @@ namespace SharedLib.Models
             BasicRecipe = false;
             ShoppingListChecked = false;
             DefaultQuantityType = SharedLib.Models.QuantityType.gram;
+            QuantityType = DefaultQuantityType;
         }
 
         public Ingredient(Food food)
@@ -36,6 +37,19 @@ namespace SharedLib.Models
             ShoppingListChecked = false;
             DefaultQuantityType = SharedLib.Models.QuantityType.gram;
             QuantityType = DefaultQuantityType;
+        }
+
+        public double GetTotalEnergy()
+        {
+            if (Food == null)
+                return 0;
+
+            if (QuantityType != SharedLib.Models.QuantityType.gram)
+                return 0;
+
+            var result = Quantity * Math.Round(Convert.ToDouble(Food.EnergiKcal), 1);
+
+            return result;
         }
     }
 }

@@ -1,0 +1,53 @@
+﻿@page "{id:Guid}"
+@model IngredientFormModel
+@{
+}
+
+<div class="col-sm-6">
+    <h2>Indtast mængde</h2>
+
+    <form method="post">
+        <div>
+            <label>Navn</label>
+            <input readonly asp-for="IngredientDto.Name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Mængde</label>
+            <div class="row">
+                <div class="col-sm-9">
+                    <input asp-for="IngredientDto.Quantity" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" asp-for="IngredientDto.QuantityType" asp-items="@Model.ListOfQuantityTypes"></select>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Grundopskrift</span>
+            </label>
+        </div>
+
+        <button type="submit" asp-page-handler="AddIngredient" class="btn btn-danger">Tilføj ingrediens</button>
+    </form>
+</div>
+
+<style>
+    .btn-danger {
+        margin-top:30px;
+    }
+
+    label {
+        margin-top:20px;
+    }
+
+    h2 {
+        margin-bottom:10px;
+    }
+
+</style>
+
+
+

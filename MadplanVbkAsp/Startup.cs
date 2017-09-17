@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using MadplanVbkAsp.Data;
 using MadplanVbkAsp.Services;
 using MadplanVbkAsp.Interfaces;
+using MadplanVbkAsp.Extensions;
+using MadplanVbkAsp.Dtos;
+using SharedLib.Models;
 
 namespace MadplanVbkAsp
 {
@@ -41,6 +44,14 @@ namespace MadplanVbkAsp
                     options.Conventions.AuthorizePage("/Account/Logout");
                 });
 
+            // Adds a default in-memory implementation of IDistributedCache.
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.Name = ".MadplanVBK";
+            });
+
             MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
             MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:DatabaseName").Value;
             MongoDbContext.IsSSL = Convert.ToBoolean(Configuration.GetSection("MongoConnection:IsSSL").Value);
@@ -50,8 +61,11 @@ namespace MadplanVbkAsp
             // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
             services.AddSingleton<IEmailSender, EmailSender>();
 
+            services.AddTransient<MongoDbContext>();
+
             services.AddScoped<IFoodData, FoodData>();
             services.AddScoped<IRecipeData, RecipeData>();
+            services.AddSingleton<IRecipeDto, RecipeDto>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +76,12 @@ namespace MadplanVbkAsp
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
+
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
+                    context.EnsureSeedData();
+                }
             }
             else
             {
@@ -71,7 +91,7 @@ namespace MadplanVbkAsp
             app.UseStaticFiles();
 
             app.UseAuthentication();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

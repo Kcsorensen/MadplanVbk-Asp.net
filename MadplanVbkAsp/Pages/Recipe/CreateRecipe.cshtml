@@ -1,0 +1,82 @@
+﻿@page
+@model CreateRecipeModel
+@{
+}
+
+<h2>Opret en ny opskrift</h2>
+
+<form method="post">
+    <div class="form-group col-sm-6">
+        <label>Navn</label>
+        <input asp-for="Recipe.Name" class="form-control">
+    </div>
+
+    <div class="form-group col-sm-6">
+        <label>Måltid</label>
+        <select class="form-control">
+            <option>Morgenmad</option>
+            <option>Mellemmåltid</option>
+            <option>Frokost</option>
+            <option>Aftensmad</option>
+        </select>
+    </div>
+
+
+    <div class="row col-sm-12" style="margin-top:100px">
+        <h4>Ingredienser:</h4>
+        <button id="addIngredientButton" type="submit" asp-page-handler="Add" class="btn btn-primary">Tilføj</button>
+    </div>
+
+    <div>
+
+        <table class="table table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Mængde</th>
+                    <th>Navn</th>
+                    <th>Energi (kcal)</th>
+                    <th>Protein (g)</th>
+                    <th>Kulhydrat (g)</th>
+                    <th>Fedt (g)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ingredient in Model.Recipe.Ingredients)
+                {
+                    <tr>
+                        <td>@ingredient.Quantity @ingredient.QuantityType</td>
+                        <td>@ingredient.Food.Name</td>
+                        <td>@ingredient.GetTotalEnergy()</td>
+                        <td>@ingredient.Food.ProteinTotal</td>
+                        <td>@ingredient.Food.KulhydratTilgaengelig</td>
+                        <td>@ingredient.Food.FedtTotal</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</form>
+
+<style>
+
+    form {
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+    .table {
+        margin-top:20px;
+    }
+
+    #addIngredientButton {
+        position: absolute;
+        right: 0;
+    }
+
+</style>
+
+<script>
+
+</script>

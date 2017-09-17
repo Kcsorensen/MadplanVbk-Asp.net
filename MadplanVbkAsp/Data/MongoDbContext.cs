@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MadplanVbkAsp.Extensions;
+using MongoDB.Driver;
 using SharedLib.Models;
 using System;
 
@@ -10,7 +11,7 @@ namespace MadplanVbkAsp.Data
         public static string DatabaseName { get; set; }
         public static bool IsSSL { get; set; }
 
-        private IMongoDatabase _database { get; }
+        public IMongoDatabase _database { get; }
 
         public MongoDbContext()
         {

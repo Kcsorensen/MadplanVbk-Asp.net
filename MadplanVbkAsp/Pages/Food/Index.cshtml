@@ -4,32 +4,30 @@
 
 }
 
-<div class="container">
-
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div>
-
-</div><!-- /.container -->
+<style>
+    .btn {
+        margin-bottom: 20px;
+    }
+</style>
 
 <div>
+    <button type="button" class="btn btn-primary">Opret madvare</button>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Ratio</th>
-                <th>Ingredients</th>
+                <th>Energi (kJ)</th>
+                <th>Energi (kcal)</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var recipe in Model.Recipes)
+            @foreach (var food in Model.Foods)
             {
                 <tr>
-                    <td>@recipe.Name</td>
-                    <td>@recipe.Ratio</td>
-                    <td>@recipe.Ingredients.Count</td>
+                    <td>@food.Name</td>
+                    <td>@food.EnergiKj</td>
+                    <td>@food.EnergiKcal</td>
                 </tr>
             }
         </tbody>

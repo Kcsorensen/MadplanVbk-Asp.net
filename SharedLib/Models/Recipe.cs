@@ -19,6 +19,11 @@ namespace SharedLib.Models
 
         public Recipe()
         {
+
+        }
+
+        public Recipe(bool use_this)
+        {
             Id = Guid.NewGuid();
             Type = "Vælg";
             DefaultQuantityType = QuantityType.gram;

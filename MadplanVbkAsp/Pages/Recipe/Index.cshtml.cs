@@ -27,7 +27,7 @@ namespace MadplanVbkAsp.Pages.Recipe
                 return Page();
             }
 
-            return RedirectToPage("/Recipe/CreateRecipe");
+            return RedirectToPage("/Recipe/CreateRecipe", new { createNewRecipe = true });
         }
     }
 }

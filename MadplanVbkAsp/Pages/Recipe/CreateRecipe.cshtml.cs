@@ -1,5 +1,7 @@
 using MadplanVbkAsp.Dtos;
+using MadplanVbkAsp.Extensions;
 using MadplanVbkAsp.Interfaces;
+using MadplanVbkAsp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,19 +9,43 @@ namespace MadplanVbkAsp.Pages.Recipe
 {
     public class CreateRecipeModel : PageModel
     {
-        private IRecipeDto _recipeDto;
+        private bool _createNewRecipe;
 
         [BindProperty]
         public SharedLib.Models.Recipe Recipe { get; set; }
 
-        public CreateRecipeModel(IRecipeDto recipeDto)
+        public CreateRecipeModel()
         {
-            _recipeDto = recipeDto;
+
         }
 
-        public void OnGet()
+        public void OnGet(bool createNewRecipe)
         {
-            Recipe = _recipeDto.Recipe;
+            _createNewRecipe = createNewRecipe;
+
+            // Opret Recipe hvis den ikke findes
+            if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
+            {
+                var recipe = new SharedLib.Models.Recipe(true);
+                Recipe = recipe;
+                HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+
+                var test = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+            }
+            else
+            {
+                // Hvis _createNewRecipe er true, overskriv den eksisterende med en ny recipe
+                if (createNewRecipe == true)
+                {
+                    var recipe = new SharedLib.Models.Recipe(true);
+                    Recipe = recipe;
+                    HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+                }
+                else
+                {
+                    Recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+                }
+            }
         }
 
         public ActionResult OnPostAdd()
@@ -29,7 +55,10 @@ namespace MadplanVbkAsp.Pages.Recipe
                 return Page();
             }
 
-            _recipeDto.Recipe = Recipe;
+            var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+
+            // Gem den opdateret Recipe som Cache.
+            HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
 
             return RedirectToPage("/Recipe/IngredientSelector");
         }

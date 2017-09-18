@@ -8,13 +8,10 @@ namespace MadplanVbkAsp.Pages.Recipe
 {
     public class IngredientSelectorModel : PageModel
     {
-        private IRecipeDto _recipeDto;
-
         public List<SharedLib.Models.Food> Foods { get; set; }
 
-        public IngredientSelectorModel(IFoodData foodData, IRecipeDto recipeDto)
+        public IngredientSelectorModel(IFoodData foodData)
         {
-            _recipeDto = recipeDto;
             Foods = foodData.GetAll();
         }
 

@@ -17,18 +17,15 @@ namespace MadplanVbkAsp.Pages.Recipe
     public class IngredientFormModel : PageModel
     {
         private MongoDbContext _dbContext;
-        private IRecipeDto _recipeDto;
 
         [BindProperty]
-        public IngredientDto IngredientDto { get; set; }
+        public Ingredient Ingredient { get; set; }
 
         public SelectList ListOfQuantityTypes { get; set; }
 
-        public IngredientFormModel(MongoDbContext dbContext, IRecipeDto recipeDto)
+        public IngredientFormModel(MongoDbContext dbContext)
         {
             _dbContext = dbContext;
-            _recipeDto = recipeDto;
-            IngredientDto = new IngredientDto() { QuantityType = QuantityType.gram };
 
             ListOfQuantityTypes = new SelectList(QuantityType.Current.CompleteListOfQuantityTypes);
         }
@@ -37,15 +34,25 @@ namespace MadplanVbkAsp.Pages.Recipe
         {
             var food = await _dbContext.Foods.Find(a => a.Id == id).SingleAsync();
 
-            if (HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.RecipeData) == null)
-            {
-                var ingredient = new Ingredient(food);
+            var ingredient = new Ingredient(food);
+            Ingredient = ingredient;
+            HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
 
-                HttpContext.Session.SetObjectAsJson(RecipeSessions.RecipeData, ingredient);
-            }
+            //// Opret Ingredient hvis den ikke findes
+            //if (HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.Ingredient) == null)
+            //{
+            //    var ingredient = new Ingredient(food);
+            //    Ingredient = ingredient;
+            //    HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
+            //}
 
-            IngredientDto.Name = food.Name;
+            //// Opret Recipe hvis den ikke findes
+            //if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
+            //{
+            //    var recipe = new SharedLib.Models.Recipe();
 
+            //    HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+            //}
         }
 
         public ActionResult OnPostAddIngredient()
@@ -55,19 +62,27 @@ namespace MadplanVbkAsp.Pages.Recipe
                 return Page();
             }
 
-            if (HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.RecipeData) == null)
+            if (HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.Ingredient) == null)
             {
                 return Page();
             }
 
-            var ingredient = HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.RecipeData);
+            var ingredient = HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.Ingredient);
 
-            ingredient.Quantity = IngredientDto.Quantity;
-            ingredient.QuantityType = IngredientDto.QuantityType;
+            ingredient.Quantity = Ingredient.Quantity;
+            ingredient.QuantityType = Ingredient.QuantityType;
 
-            _recipeDto.Recipe.Ingredients.Add(ingredient);
+            //// Gem den opdateret Ingredient som
+            //HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
 
-            return RedirectToPage("./CreateRecipe");
+            var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+
+            recipe.Ingredients.Add(ingredient);
+
+            // Gem den opdateret recipe.
+            HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+
+            return RedirectToPage("./CreateRecipe", new { createNewRecipe = false });
         }
     }
 }

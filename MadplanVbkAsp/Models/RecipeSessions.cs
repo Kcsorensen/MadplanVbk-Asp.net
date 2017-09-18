@@ -7,7 +7,8 @@ namespace MadplanVbkAsp.Models
 {
     public class RecipeSessions
     {
-        public const string RecipeData = "RecipeData";
+        public const string Ingredient = "Ingredient";
+        public const string Recipe = "Recipe";
 
     }
 }

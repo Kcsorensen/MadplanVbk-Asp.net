@@ -11,6 +11,7 @@ namespace SharedLib.Models
         public string Name { get; set; }
         public string Type { get; set; }
         public string DefaultQuantityType { get; set; }
+        public bool IsProtected { get; set; }
         public double Ratio { get; set; }
         public double Persons { get; set; }
         public int Page { get; set; }
@@ -19,15 +20,20 @@ namespace SharedLib.Models
 
         public Recipe()
         {
-
-        }
-
-        public Recipe(bool use_this)
-        {
             Id = Guid.NewGuid();
             Type = "Vælg";
             DefaultQuantityType = QuantityType.gram;
             Ingredients = new ObservableCollection<Ingredient>();
+            IsProtected = false;
         }
+
+        //public Recipe(bool use_this)
+        //{
+        //    Id = Guid.NewGuid();
+        //    Type = "Vælg";
+        //    DefaultQuantityType = QuantityType.gram;
+        //    Ingredients = new ObservableCollection<Ingredient>();
+        //    IsProtected = false;
+        //}
     }
 }

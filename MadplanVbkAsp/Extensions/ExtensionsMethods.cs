@@ -59,7 +59,6 @@ namespace MadplanVbkAsp.Extensions
 
         #endregion
 
-
         //#region String to Double Converter
 
         //public static double ConvertToDouble(this string stringVal)
@@ -102,59 +101,14 @@ namespace MadplanVbkAsp.Extensions
 
             //var dbContext = new MongoDbContext();
 
-            //var col = dbContext.Testings.Find(a => true).ToList();
-
-
+            //var col = dbContext.Recipes.Find(a => true).ToList();
 
             //foreach (var item in col)
             //{
-            //    var filter = Builders<Testing>.Filter.Eq("Id", item.Id);
-            //    var update = Builders<Testing>.Update.Set("Money", 100);
-            //    dbContext.Testings.UpdateOne(filter, update);
+            //    var filter = Builders<Recipe>.Filter.Eq("Id", item.Id);
+            //    var update = Builders<Recipe>.Update.Set("IsProtected", true);
+            //    dbContext.Recipes.UpdateOne(filter, update);
             //}
-
-
-            //var recipes = dbContext.Recipes;
-
-            //var Egg = dbContext.Foods.Find(a => a.FoodId == 1159).First();
-
-            //Egg.Name = "Testing æg";
-
-            //var filter = Builders<Recipe>.Filter;
-            //var test = filter.ElemMatch(r => r.Ingredients, i => i.Food.Id == Egg.Id);
-            //var recipe = recipes.Find(test).SingleOrDefault();
-
-            //var update = Builders<Recipe>.Update;
-
-            //var setter = update.Set(r => r.Ingredients[-1].Food, Egg);
-
-            //recipes.UpdateOne(test, setter);
-
-            //foreach (var recipe in recipes)
-            //{
-            //    if (recipe.Ingredients.Any(a => a.Food.Id == Egg.Id))
-            //    {
-            //        var filter = Builders<Recipe>.Filter.Where(a =
-
-            //        var ingredient = recipe.Ingredients.Where(a => a.Food.Id == Egg.Id).First();
-
-
-
-            //        recipe.Ingredients.Remove(ingredient);
-
-            //        ingredient.Food = Egg;
-
-            //        recipe.Ingredients.Add(ingredient);
-
-            //        //dbContext.Recipes.ReplaceOne()
-
-            //    } 
-
-            //}
-
-            //var test = Builders<Recipe>.Filter.Where(a => a.Ingredients.Where(b => b.Food.Id == Egg.Id))
-
-
         }
     }
 }

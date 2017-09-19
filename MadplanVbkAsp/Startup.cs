@@ -65,7 +65,6 @@ namespace MadplanVbkAsp
 
             services.AddScoped<IFoodData, FoodData>();
             services.AddScoped<IRecipeData, RecipeData>();
-            services.AddSingleton<IRecipeDto, RecipeDto>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,8 +78,8 @@ namespace MadplanVbkAsp
 
                 using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
-                    context.EnsureSeedData();
+                    //var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
+                    //context.EnsureSeedData();
                 }
             }
             else

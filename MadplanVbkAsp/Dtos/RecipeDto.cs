@@ -1,25 +1,24 @@
-﻿using MadplanVbkAsp.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using SharedLib.Models;
+﻿using SharedLib.Models;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MadplanVbkAsp.Dtos
 {
-    public class RecipeDto : IRecipeDto
+    public class RecipeDto 
     {
-        public Recipe Recipe { get; set; }
+        [Required]
+        [Display(Name="navn")]
+        public string Name { get; set; }
+
+        [Required]
+        public string MealType { get; set; }
+
+        public ObservableCollection<Ingredient> Ingredients { get; set; }
 
         public RecipeDto()
         {
-            Recipe = new Recipe();
-        }
-
-        public void Clear()
-        {
-            Recipe = new Recipe();
+            MealType = SharedLib.Models.MealType.Breakfast;
+            Ingredients = new ObservableCollection<Ingredient>();
         }
 
     }

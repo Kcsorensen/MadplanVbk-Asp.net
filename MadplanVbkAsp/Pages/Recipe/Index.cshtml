@@ -17,8 +17,9 @@
                 <thead class="thead-inverse">
                     <tr>
                         <th>Name</th>
-                        <th style="text-align:center">Ratio</th>
-                        <th style="text-align:center">Ingredients</th>
+                        <th class="aligncenter">Ratio</th>
+                        <th class="aligncenter">Ingredients</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,8 +27,14 @@
                     {
                         <tr>
                             <td>@recipe.Name</td>
-                            <td style="text-align:center">@recipe.Ratio</td>
-                            <td style="text-align:center">@recipe.Ingredients.Count</td>
+                            <td class="aligncenter nostretch">@recipe.Ratio</td>
+                            <td class="aligncenter nostretch">@recipe.Ingredients.Count</td>
+                            <td class="aligncenter nostretch">
+                                @if (recipe.IsProtected == false)
+                                {
+                                    <button type="submit" class="btn-sm btn-danger">Slet</button>
+                                }
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -54,6 +61,15 @@
 
     .pre-scrollable {
         max-height:700px;
+    }
+
+    .nostretch {
+        width: 1%;
+        white-space: nowrap;
+    }
+
+    .aligncenter {
+        text-align: center;
     }
 
 </style>

@@ -1,4 +1,5 @@
 using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Dtos;
 using MadplanVbkAsp.Extensions;
 using MadplanVbkAsp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +15,16 @@ namespace MadplanVbkAsp.Pages.Recipe
         private MongoDbContext _dbContext;
 
         [BindProperty]
-        public SharedLib.Models.Recipe Recipe { get; set; }
+        public RecipeDto RecipeDto { get; set; }
 
         public SelectList ListOfMealTypes { get; set; }
 
         public CreateRecipeModel(MongoDbContext dbContext)
         {
             _dbContext = dbContext;
+            RecipeDto = new RecipeDto();
+
+            ListOfMealTypes = new SelectList(MealType.Current.ListOfMealTypes);
         }
 
         public void OnGet(bool createNewRecipe)
@@ -31,7 +35,11 @@ namespace MadplanVbkAsp.Pages.Recipe
             if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
             {
                 var recipe = new SharedLib.Models.Recipe();
-                Recipe = recipe;
+
+                RecipeDto.Name = recipe.Name;
+                RecipeDto.MealType = recipe.Type;
+                RecipeDto.Ingredients = recipe.Ingredients;
+
                 HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
             }
             else
@@ -40,16 +48,21 @@ namespace MadplanVbkAsp.Pages.Recipe
                 if (createNewRecipe == true)
                 {
                     var recipe = new SharedLib.Models.Recipe();
-                    Recipe = recipe;
+
+                    RecipeDto.Name = recipe.Name;
+                    RecipeDto.MealType = recipe.Type;
+                    RecipeDto.Ingredients = recipe.Ingredients;
+
                     HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
                 }
                 else
                 {
-                    Recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+                    var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+                    RecipeDto.Name = recipe.Name;
+                    RecipeDto.MealType = recipe.Type;
+                    RecipeDto.Ingredients = recipe.Ingredients;
                 }
             }
-
-            ListOfMealTypes = new SelectList(MealType.Current.ListOfMealTypes);
         }
 
         public ActionResult OnPostAdd()
@@ -61,9 +74,8 @@ namespace MadplanVbkAsp.Pages.Recipe
 
             var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
 
-            // TODO: Mangler at name er required.
-            recipe.Name = Recipe.Name;
-            recipe.Type = Recipe.Type;
+            recipe.Name = RecipeDto.Name;
+            recipe.Type = RecipeDto.MealType;
 
             // Gem den opdateret Recipe som Cache.
             HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
@@ -73,6 +85,11 @@ namespace MadplanVbkAsp.Pages.Recipe
 
         public ActionResult OnPostSaveRecipe()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
             {
                 return Page();
@@ -80,9 +97,8 @@ namespace MadplanVbkAsp.Pages.Recipe
 
             var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
 
-            // TODO: Mangler at name er required.
-            recipe.Name = Recipe.Name;
-            recipe.Type = Recipe.Type;
+            recipe.Name = RecipeDto.Name;
+            recipe.Type = RecipeDto.MealType;
 
             _dbContext.Recipes.InsertOne(recipe);
 
@@ -91,6 +107,18 @@ namespace MadplanVbkAsp.Pages.Recipe
 
         public ActionResult OnPostClearRecipe()
         {
+            if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
+            {
+                return Page();
+            }
+
+            var recipe = new SharedLib.Models.Recipe();
+
+            RecipeDto.Name = recipe.Name;
+            RecipeDto.MealType = recipe.Type;
+
+            HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+
             return Page();
         }
     }

@@ -11,12 +11,13 @@
 
         <div id="entryforms" class="form-group">
             <label>Navn</label>
-            <input asp-for="Recipe.Name" class="form-control">
+            <input class="form-control formStyle" asp-for="RecipeDto.Name" placeholder="Navnet på opskriften">
+            <span asp-validation-for="RecipeDto.Name"></span>
         </div>
 
         <div id="entryforms" class="form-group">
             <label>Måltid</label>
-            <select class="form-control" asp-for="Recipe.Type" asp-items="@Model.ListOfMealTypes"></select>
+            <select class="form-control" style="height:40px;" asp-for="RecipeDto.MealType" asp-items="@Model.ListOfMealTypes"></select>
         </div>
 
         <div id="checkbox">
@@ -47,7 +48,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var ingredient in Model.Recipe.Ingredients)
+                    @foreach (var ingredient in Model.RecipeDto.Ingredients)
                     {
                         <tr>
                             <td class="nostretch">@ingredient.Quantity @ingredient.QuantityType</td>
@@ -60,7 +61,6 @@
                                 <div class="d-inline aligncenter">
                                     <button class="btn-sm btn-success" type="button">Ret</button>
                                     <button class="btn-sm btn-danger" type="button">Slet</button>
-
                                 </div>
                             </td>
                         </tr>
@@ -125,7 +125,7 @@
     }
 
     #entryforms {
-        width:40%;
+        width: 40%;
     }
 
     #checkbox {

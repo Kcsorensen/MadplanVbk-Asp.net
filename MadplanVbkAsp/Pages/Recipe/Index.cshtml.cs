@@ -1,7 +1,9 @@
 using MadplanVbkAsp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MadplanVbkAsp.Pages.Recipe
 {
@@ -11,7 +13,7 @@ namespace MadplanVbkAsp.Pages.Recipe
 
         public IndexModel(IRecipeData recipeData)
         {
-            Recipes = recipeData.GetAll();
+            Recipes = recipeData.GetAll().OrderBy(a => a.Name, StringComparer.Ordinal).ToList(); 
         }
 
         public void OnGet()

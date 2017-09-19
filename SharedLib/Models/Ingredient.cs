@@ -47,7 +47,7 @@ namespace SharedLib.Models
             if (QuantityType != SharedLib.Models.QuantityType.gram)
                 return 0;
 
-            var result = Quantity * Math.Round(Convert.ToDouble(Food.EnergiKcal), 1);
+            var result = Quantity / 100.0 * Math.Round(Convert.ToDouble(Food.EnergiKcal), 1);
 
             return result;
         }

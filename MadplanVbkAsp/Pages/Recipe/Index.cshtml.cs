@@ -9,27 +9,30 @@ namespace MadplanVbkAsp.Pages.Recipe
 {
     public class IndexModel : PageModel
     {
+        private IRecipeData _recipeData;
+
         public List<SharedLib.Models.Recipe> Recipes { get; set; }
 
         public IndexModel(IRecipeData recipeData)
         {
-            Recipes = recipeData.GetAll().OrderBy(a => a.Name, StringComparer.Ordinal).ToList(); 
+            _recipeData = recipeData;
         }
 
         public void OnGet()
         {
-
+            Recipes = _recipeData.GetAll().OrderBy(a => a.Name, StringComparer.Ordinal).ToList();
         }
 
-
-        public ActionResult OnPost()
+        public ActionResult OnPostCreateRecipe()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             return RedirectToPage("/Recipe/CreateRecipe", new { createNewRecipe = true });
+        }
+
+        public ActionResult OnPostDeleteRecipe(Guid id)
+        {
+            _recipeData.Remove(id);
+
+            return RedirectToPage("./Index");
         }
     }
 }

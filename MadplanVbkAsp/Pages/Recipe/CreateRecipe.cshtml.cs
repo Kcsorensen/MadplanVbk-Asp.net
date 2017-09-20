@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SharedLib.Models;
+using System;
+using System.Linq;
 
 namespace MadplanVbkAsp.Pages.Recipe
 {
@@ -67,11 +69,6 @@ namespace MadplanVbkAsp.Pages.Recipe
 
         public ActionResult OnPostAdd()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
 
             recipe.Name = RecipeDto.Name;
@@ -118,6 +115,17 @@ namespace MadplanVbkAsp.Pages.Recipe
             RecipeDto.MealType = recipe.Type;
 
             HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
+
+            return Page();
+        }
+
+        public ActionResult OnPostDeleteIngredient(Guid id)
+        {
+            var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
+
+            var selectedIngredient = recipe.Ingredients.Single(a => a.Id == id);
+
+            recipe.Ingredients.Remove(selectedIngredient);
 
             return Page();
         }

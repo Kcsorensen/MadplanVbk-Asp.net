@@ -1,4 +1,5 @@
-﻿using SharedLib.Models;
+﻿using MadplanVbkAsp.Models;
+using SharedLib.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -6,7 +7,7 @@ namespace MadplanVbkAsp.Dtos
 {
     public class RecipeDto 
     {
-        [Required]
+        [Required (ErrorMessage = ErrorMessage.Required)]
         [Display(Name="navn")]
         public string Name { get; set; }
 

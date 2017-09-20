@@ -1,20 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Interfaces;
+using MadplanVbkAsp.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MadplanVbkAsp.Data;
-using MadplanVbkAsp.Services;
-using MadplanVbkAsp.Interfaces;
-using MadplanVbkAsp.Extensions;
-using MadplanVbkAsp.Dtos;
-using SharedLib.Models;
+using System;
 
 namespace MadplanVbkAsp
 {

@@ -11,5 +11,6 @@ namespace MadplanVbkAsp.Interfaces
         List<Recipe> GetAll();
         Recipe Get(int id);
         void Add(Recipe newRecipe);
+        void Remove(Guid id);
     }
 }

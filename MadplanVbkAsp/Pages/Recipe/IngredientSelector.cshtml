@@ -3,34 +3,41 @@
 @{
 }
 
-<h2>Vælg en madvare</h2>
+<div class="col-sm-12">
+    <h2>Vælg en madvare</h2>
 
-<form method="post">
-    <div class="pre-scrollable">
-        <table id="eventsTable" class="table table-striped table-hover">
-            <thead class="thead-inverse">
-                <tr>
-                    <th>Name</th>
-                    <th style="text-align:center">Energi (kJ)</th>
-                    <th style="text-align:center">Energi (kcal)</th>
-                    <th style="text-align:center"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var food in Model.Foods)
-                {
+    <form method="post">
+        <div id="searchDiv" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Søg" aria-label="Search" asp-for="SearchText">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-page-handler="Search" asp-route-id="@Model.SearchText">Search</button>
+        </div>
+
+        <div class="pre-scrollable">
+            <table id="eventsTable" class="table table-striped table-hover">
+                <thead class="thead-inverse">
                     <tr>
-                        <td>@food.Name</td>
-                        <td style="text-align:center">@food.EnergiKj</td>
-                        <td style="text-align:center">@food.EnergiKcal</td>
-                        <td style="text-align:center"><a class="btn btn-primary" asp-page="./IngredientForm" asp-route-id="@food.Id">Vælg</a></td>
+                        <th>Name</th>
+                        <th style="text-align:center">Energi (kJ)</th>
+                        <th style="text-align:center">Energi (kcal)</th>
+                        <th style="text-align:center"></th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    @foreach (var food in Model.Foods)
+                    {
+                        <tr>
+                            <td>@food.Name</td>
+                            <td style="text-align:center">@food.EnergiKj</td>
+                            <td style="text-align:center">@food.EnergiKcal</td>
+                            <td style="text-align:center"><a class="btn btn-primary" asp-page="./IngredientForm" asp-route-id="@food.Id">Vælg</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
 
-</form>
 
 <style>
     .pre-scrollable {
@@ -43,6 +50,10 @@
     
     h2 {
         margin-bottom:30px;
+    }
+
+    #searchDiv {
+
     }
 </style>
 

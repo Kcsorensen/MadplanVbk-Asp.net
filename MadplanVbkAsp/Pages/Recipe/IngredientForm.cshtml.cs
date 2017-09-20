@@ -1,7 +1,5 @@
 using MadplanVbkAsp.Data;
-using MadplanVbkAsp.Dtos;
 using MadplanVbkAsp.Extensions;
-using MadplanVbkAsp.Interfaces;
 using MadplanVbkAsp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,22 +35,6 @@ namespace MadplanVbkAsp.Pages.Recipe
             var ingredient = new Ingredient(food);
             Ingredient = ingredient;
             HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
-
-            //// Opret Ingredient hvis den ikke findes
-            //if (HttpContext.Session.GetObjectFromJson<Ingredient>(RecipeSessions.Ingredient) == null)
-            //{
-            //    var ingredient = new Ingredient(food);
-            //    Ingredient = ingredient;
-            //    HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
-            //}
-
-            //// Opret Recipe hvis den ikke findes
-            //if (HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe) == null)
-            //{
-            //    var recipe = new SharedLib.Models.Recipe();
-
-            //    HttpContext.Session.SetObjectAsJson(RecipeSessions.Recipe, recipe);
-            //}
         }
 
         public ActionResult OnPostAddIngredient()
@@ -71,9 +53,6 @@ namespace MadplanVbkAsp.Pages.Recipe
 
             ingredient.Quantity = Ingredient.Quantity;
             ingredient.QuantityType = Ingredient.QuantityType;
-
-            //// Gem den opdateret Ingredient som
-            //HttpContext.Session.SetObjectAsJson(RecipeSessions.Ingredient, ingredient);
 
             var recipe = HttpContext.Session.GetObjectFromJson<SharedLib.Models.Recipe>(RecipeSessions.Recipe);
 

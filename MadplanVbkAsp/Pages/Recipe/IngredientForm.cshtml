@@ -9,21 +9,21 @@
     <form method="post">
         <div>
             <label>Navn</label>
-            <input readonly asp-for="Ingredient.Food.Name" class="form-control">
+            <input class="form-control formStyle" readonly asp-for="Ingredient.Food.Name">
         </div>
         <div class="form-group">
             <label>Mængde</label>
             <div class="row">
                 <div class="col-sm-9">
-                    <input asp-for="Ingredient.Quantity" class="form-control">
+                    <input class="form-control formStyle" asp-for="Ingredient.Quantity" >
                 </div>
                 <div class="col-sm-3">
-                    <select class="form-control" asp-for="Ingredient.QuantityType" asp-items="@Model.ListOfQuantityTypes"></select>
+                    <select class="form-control" style="height:40px;" asp-for="Ingredient.QuantityType" asp-items="@Model.ListOfQuantityTypes"></select>
                 </div>
             </div>
         </div>
 
-        <button type="submit" asp-page-handler="AddIngredient" class="btn btn-danger">Tilføj ingrediens</button>
+        <button type="submit" class="btn btn-danger" asp-page-handler="AddIngredient">Tilføj ingrediens</button>
     </form>
 </div>
 

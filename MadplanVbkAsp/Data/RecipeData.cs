@@ -19,6 +19,8 @@ namespace MadplanVbkAsp.Data
             throw new NotImplementedException();
         }
 
+
+
         public Recipe Get(int id)
         {
             throw new NotImplementedException();
@@ -1318,6 +1320,12 @@ namespace MadplanVbkAsp.Data
             var list = dbContext.Recipes.Find(a => true).ToList();
 
             return list;
+        }
+
+        public void Remove(Guid id)
+        {
+            var filter = Builders<Recipe>.Filter.Eq("Id", id);
+            dbContext.Recipes.DeleteOne(filter);
         }
 
         private Ingredient addFoodToRecipe(string Id, double quantity, string quantityType, bool basicRecipe = false, string defaultQuantityType = QuantityType.gram)

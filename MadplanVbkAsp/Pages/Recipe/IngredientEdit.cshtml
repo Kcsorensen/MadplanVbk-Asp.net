@@ -1,0 +1,47 @@
+﻿@page "{id:Guid}"
+@model IngredientEditModel
+@{
+}
+
+<div class="col-sm-6">
+    <h2>Indtast mængde</h2>
+
+    <form method="post">
+        <div>
+            <label>Navn</label>
+            <input class="form-control formStyle" readonly asp-for="IngredientDto.Name">
+        </div>
+        <div class="form-group">
+            <label>Mængde</label>
+            <div class="row">
+                <div class="col-sm-9">
+                    <input class="form-control formStyle" asp-for="IngredientDto.Quantity">
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" style="height:40px;" asp-for="IngredientDto.QuantityType" asp-items="@Model.ListOfQuantityTypes"></select>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-danger" asp-page-handler="EditIngredient">Gem ændringer</button>
+
+        @Html.HiddenFor(a => a.IngredientDto.Id)
+    </form>
+
+</div>
+
+
+
+<style>
+    .btn-danger {
+        margin-top: 30px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+</style>

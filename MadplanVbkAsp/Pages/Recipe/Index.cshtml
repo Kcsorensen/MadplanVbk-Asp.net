@@ -8,7 +8,7 @@
 <form method="post">
 
     <div id="divCreateButton">
-        <button type="submit" class="btn btn-primary">Opret opskrift</button>
+        <button type="submit" class="btn btn-primary" asp-page-handler="CreateRecipe">Opret opskrift</button>
     </div>
 
     <div>
@@ -32,7 +32,7 @@
                             <td class="aligncenter nostretch">
                                 @if (recipe.IsProtected == false)
                                 {
-                                    <button type="submit" class="btn-sm btn-danger">Slet</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" asp-page-handler="DeleteRecipe" asp-route-id="@recipe.Id">Slet</button>
                                 }
                             </td>
                         </tr>
@@ -50,14 +50,14 @@
     #divCreateButton {
         padding-right:20px;
         text-align: right;
-        margin: auto;
+        margin-bottom:10px;
     }
 
-    .btn {
+    /*.btn {
         
         margin-top:20px;
         margin-bottom: 20px;
-    }
+    }*/
 
     .pre-scrollable {
         max-height:700px;

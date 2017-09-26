@@ -101,13 +101,13 @@ namespace MadplanVbkAsp.Extensions
 
             //var dbContext = new MongoDbContext();
 
-            //var col = dbContext.Recipes.Find(a => true).ToList();
+            //var col = dbContext.Foods.Find(a => true).ToList();
 
             //foreach (var item in col)
             //{
-            //    var filter = Builders<Recipe>.Filter.Eq("Id", item.Id);
-            //    var update = Builders<Recipe>.Update.Set("IsProtected", true);
-            //    dbContext.Recipes.UpdateOne(filter, update);
+            //    var filter = Builders<Food>.Filter.Eq("Id", item.Id);
+            //    var update = Builders<Food>.Update.Set("IsProtected", true);
+            //    dbContext.Foods.UpdateOne(filter, update);
             //}
         }
     }

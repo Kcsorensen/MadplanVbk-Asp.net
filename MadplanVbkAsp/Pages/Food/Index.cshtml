@@ -4,32 +4,70 @@
 
 }
 
-<style>
-    .btn {
-        margin-bottom: 20px;
-    }
-</style>
+<h2>Oversigt over madvare</h2>
 
 <div>
-    <button type="button" class="btn btn-primary">Opret madvare</button>
+    <form method="post">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Energi (kJ)</th>
-                <th>Energi (kcal)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var food in Model.Foods)
-            {
-                <tr>
-                    <td>@food.Name</td>
-                    <td>@food.EnergiKj</td>
-                    <td>@food.EnergiKcal</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        <div id="divCreateButton">
+            <a class="btn btn-primary" asp-page="./CreateFood">Opret madvare</a>
+        </div>
+
+        <div class="pre-scrollable">
+            <table class="table table-striped table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Name</th>
+                        <th class="aligncenter">Energi (kJ)</th>
+                        <th class="aligncenter">Energi (kcal)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var food in Model.Foods)
+                    {
+                        <tr onclick="location.href = '@(Url.Page("./FoodInfo", new { id = food.Id }))'">
+                            <td>@food.Name</td>
+                            <td class="aligncenter">@food.EnergiKj</td>
+                            <td class="aligncenter">@food.EnergiKcal</td>
+                            <td class="aligncenter">
+                                @if (food.IsProtected == false)
+                                {
+                                    <button type="submit" class="btn btn-sm btn-danger" asp-page-handler="DeleteFood" asp-route-id="@food.Id">Slet</button>
+
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </form>
 </div>
+
+<style>
+
+    #divCreateButton {
+        padding-right: 20px;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .pre-scrollable {
+        max-height: 700px;
+    }
+
+    .table-hover tbody tr:hover td {
+        background-color: lightblue;
+    }  
+
+    .nostretch {
+        width: 1%;
+        white-space: nowrap;
+    }
+
+    .aligncenter {
+        text-align: center;
+    }
+
+</style>

@@ -1,0 +1,328 @@
+﻿@page
+@model CreateFoodModel
+@{}
+
+
+<div class="col-sm-12">
+    <h2>Opret ny madvare</h2>
+    <form method="post">
+        <div id="accordion" role="tablist">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <span data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Makronæringstoffer m.m.
+                        </span>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div id="entryforms" class="form-group">
+                            <label>Navn</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Name" placeholder="Navnet på madvaren">
+                            <span asp-validation-for="FoodDto.Name"></span>
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Energi [kJ]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.EnergiKj">
+
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Energi [kcal]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.EnergiKcal">
+                        </div>
+
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Protein, total [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.ProteinTotal">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Kulhydrat, tilgængelig [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.KulhydratTilgaengelig">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Tilsat sukker [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.TilsatSukker">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Kostfibre [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Kostfiber">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Fedt, total [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.FedtTotal">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Alkohol [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Alkohol">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Tørstof [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Torstof">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Vand [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Vand">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo">
+                    <h5 class="mb-0">
+                        <span class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Vitaminer
+                        </span>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>A-vitamin [RE]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Avitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Retinol [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Retinol">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>ß-caroten [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Bcaroten">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>D-vitamin [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Dvitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>D3 cholecalciferol [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.D3cholecalciferol">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>E-vitamin [α-TE]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Evitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>alfa-tokoferol [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.AlfaTokoferol">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>K1-vitamin [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.K1vitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>B1-vitamin [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.B1vitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>B2-vitamin, riboflavin [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.B2vitaminRiboflavin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Niacin [NE]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Niacin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Niacin 2 [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Niacin2">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>B6-vitamin [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.B6vitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Pantothensyre [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Pantothensyre">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Biotin [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Biotin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Folat [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Folat">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>B12-vitamin [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.B12vitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>C-vitamin [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Cvitamin">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>L-ascorbinsyre [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Lascorbinsyre">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThree">
+                    <h5 class="mb-0">
+                        <span class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Mineraler og uorganisk
+                        </span>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Chlorid, Cl [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Chlorid">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Natrium, Na [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Natrium">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Kalium, K [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Kalium">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Calcium, Ca [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Calcium">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Magnesium, Mg [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Magnesium">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Phosphor, P [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Phosphor">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Jern, Fe [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Jern">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Kobber, Cu [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Kobber">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Zink, Zn [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Zink">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Jod, I [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Jod">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Mangan, Mn [mg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Mangan">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Chrom, Cr [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Chrom">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Selen, Se [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Selen">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Molybdæn, Mo [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Molybdbaen">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Nikkel, Ni [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Nikkel">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Cadmium, Cd [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Cadmium">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Bly, Pb [µg]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.Bly">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingFour">
+                    <h5 class="mb-0">
+                        <span class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Enhedernes vægt
+                        </span>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Spsk. [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.spsk">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Stk. [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.stk">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Skive(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.skive">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Tsk. [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.tsk">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Dl. [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.knsp">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Knsp. [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.spsk">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Dåse(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.dåse">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Dråbe(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.dråbe">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Pakke(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.pakke">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Plade(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.plade">
+                        </div>
+                        <div id="entryforms" class="form-group d-inline-block">
+                            <label>Pose(r) [g]</label>
+                            <input class="form-control formStyle" asp-for="FoodDto.QuantityConverter.pose">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="buttonsDiv">
+            <button type="submit" asp-page-handler="SaveFood" class="btn btn-danger">Gem madvare</button>
+            <button type="submit" asp-page-handler="ClearFood" class="btn btn-outline-dark">Ryd madvare</button>
+        </div>
+    </form>
+
+</div>
+
+<style>
+    #accordion {
+        margin-top: 30px;
+    }
+
+    #entryforms {
+        width: 40%;
+    }
+
+    .d-inline-block {
+        margin-right: 10px;
+    }
+
+    #buttonsDiv {
+        margin-top: 30px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+</style>

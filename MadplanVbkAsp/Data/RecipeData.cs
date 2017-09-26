@@ -19,8 +19,6 @@ namespace MadplanVbkAsp.Data
             throw new NotImplementedException();
         }
 
-
-
         public Recipe Get(int id)
         {
             throw new NotImplementedException();
@@ -33,13 +31,14 @@ namespace MadplanVbkAsp.Data
                 #region Morgenmad
 
                 // Hvid æggepandekage med rød peber og ost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Hvid æggepandekage med rød peber og ost",
                     Type = MealType.Breakfast,
                     Ratio = 0.9,
                     Persons = 1,
                     Page = 96,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Friskæggehvide.GetDescription(), 2, QuantityType.stk),
@@ -58,6 +57,7 @@ namespace MadplanVbkAsp.Data
                     Ratio = 0.7,
                     Persons = 1,
                     Page = 98,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Æg.GetDescription(), 2, QuantityType.stk),
@@ -70,13 +70,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Skyr med Granola
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Skyr med Granola",
                     Type = MealType.Breakfast,
                     Ratio = 0.6,
                     Persons = 1,
                     Page = 100,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Skyr.GetDescription(), 1.5, QuantityType.dl),
@@ -85,13 +86,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Klapsammen med nøddespread og æg
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Klapsammen med nøddespread og æg",
                     Type = MealType.Breakfast,
                     Ratio = 0.3,
                     Persons = 1,
                     Page = 101,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Rugbrød.GetDescription(), 1, QuantityType.skive),
@@ -101,13 +103,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Grovpita med skinke, gulerødder og hytteost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Grovpita med skinke, gulerødder og hytteost",
                     Type = MealType.Breakfast,
                     Ratio = 0.6,
                     Persons = 1,
                     Page = 102,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Pitabrød.GetDescription(), 1, QuantityType.skive),
@@ -119,13 +122,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Ruggrød med æblemost og nødder
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Ruggrød med æblemost og nødder",
                     Type = MealType.Breakfast,
                     Ratio = 0.2,
                     Persons = 1,
                     Page = 104,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Rugflager.GetDescription(), 1, QuantityType.dl),
@@ -138,13 +142,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Knækbrød med æg og hytteost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Knækbrød med æg og hytteost",
                     Type = MealType.Breakfast,
                     Ratio = 0.4,
                     Persons = 1,
                     Page = 106,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Fuldkornsknækbrød.GetDescription(), 2, QuantityType.skive),
@@ -155,13 +160,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Pink grød med solbær
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Pink grød med solbær",
                     Type = MealType.Breakfast,
                     Ratio = 0.3,
                     Persons = 1,
                     Page = 108,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Havregryn.GetDescription(), 1, QuantityType.dl),
@@ -174,13 +180,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Grød "to go"
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Grød \"to go\"",
                     Type = MealType.Breakfast,
                     Ratio = 0.4,
                     Persons = 1,
                     Page = 110,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
 
@@ -196,13 +203,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Syrnet mysli
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Syrnet mysli",
                     Type = MealType.Breakfast,
                     Ratio = 0.4,
                     Persons = 2,
                     Page = 112,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Mælk.GetDescription(), 1, QuantityType.dl),
@@ -217,13 +225,14 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Søndag morgen
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Søndag morgen",
                     Type = MealType.Breakfast,
                     Ratio = 0.8,
                     Persons = 1,
                     Page = 114,
+                    IsProtected = true,
                     Ingredients = new ObservableCollection<Ingredient>()
                 {
                     addFoodToRecipe(IngredientHelper.Rugbrød.GetDescription(), 1, QuantityType.skive),
@@ -243,7 +252,7 @@ namespace MadplanVbkAsp.Data
                 // Rugbolle med chokolade
 
                 // Gulerødder med grønne ærter
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Søndag morgen",
                     Type = MealType.Snack,
@@ -263,7 +272,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Røgbrød med AC-spread
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Røgbrød med AC-spread",
                     Type = MealType.Snack,
@@ -278,7 +287,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Nøddespread på knækbrød
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Nøddespread på knækbrød",
                     Type = MealType.Snack,
@@ -293,7 +302,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Æg med knas
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Æg med knas",
                     Type = MealType.Snack,
@@ -311,7 +320,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Æg med hytteost og mandler
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Æg med hytteost og mandler",
                     Type = MealType.Snack,
@@ -329,7 +338,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Hytteost og æbler med fuldkornspitabrød
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Hytteost og æbler med fuldkornspitabrød",
                     Type = MealType.Snack,
@@ -346,7 +355,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Æble med citron og kakaonibs
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Æble med citron og kakaonibs",
                     Type = MealType.Snack,
@@ -363,7 +372,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Pære med peber og mozzarella
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Pære med peber og mozzarella",
                     Type = MealType.Snack,
@@ -379,7 +388,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kiwi med knæk
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kiwi med knæk",
                     Type = MealType.Snack,
@@ -395,7 +404,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Mango, mandler og mynte
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Mango, mandler og mynte",
                     Type = MealType.Snack,
@@ -417,7 +426,7 @@ namespace MadplanVbkAsp.Data
                 #region Frokost
 
                 // Fennikel, parmaskinke og mandler 
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Fennikel, parmaskinke og mandler",
                     Type = MealType.Lunch,
@@ -437,7 +446,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Korn, aguark, nødder og urter 
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Korn, aguark, nødder og urter",
                     Type = MealType.Lunch,
@@ -458,7 +467,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kål, kød og ost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kål, kød og ost",
                     Type = MealType.Lunch,
@@ -479,7 +488,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Tun, kartofler og æg
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Tun, kartofler og æg",
                     Type = MealType.Lunch,
@@ -498,7 +507,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Makrel, kål, rugbrød og skyr
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Makrel, kål, rugbrød og skyr",
                     Type = MealType.Lunch,
@@ -518,7 +527,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Korn, bær, hytteost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Korn, bær, hytteost",
                     Type = MealType.Lunch,
@@ -538,7 +547,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kylling, majs og cornichoner
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kylling, majs og cornichoner",
                     Type = MealType.Lunch,
@@ -557,7 +566,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kold tomatsuppe
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kold tomatsuppe",
                     Type = MealType.Lunch,
@@ -580,7 +589,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Wontonpakker med hummus og hytteost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Wontonpakker med hummus og hytteost",
                     Type = MealType.Lunch,
@@ -598,7 +607,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Rugbrød med torskerogn, sennepsskyr og karse
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Rugbrød med torskerogn, sennepsskyr og karse",
                     Type = MealType.Lunch,
@@ -617,7 +626,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Amar´mad med hummus
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Amar´mad med hummus",
                     Type = MealType.Lunch,
@@ -635,7 +644,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Æggesalat på sprødt brød
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Æggesalat på sprødt brød",
                     Type = MealType.Lunch,
@@ -660,7 +669,7 @@ namespace MadplanVbkAsp.Data
                 #region Aftensmåltider
 
                 // Wrap med kylling, kål og karry
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Korn, aguark, nødder og urter",
                     Type = MealType.Dinner,
@@ -682,7 +691,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kyllingelår med rødder, lakrids og linser
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kyllingelår med rødder, lakrids og linser",
                     Type = MealType.Dinner,
@@ -703,7 +712,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kylling med aubergine, tomat og kanel
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kylling med aubergine, tomat og kanel",
                     Type = MealType.Dinner,
@@ -724,7 +733,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kyllingefilet med pærer, druer og ris
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kyllingefilet med pærer, druer og ris",
                     Type = MealType.Dinner,
@@ -745,7 +754,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kylling med gulerødder
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kylling med gulerødder",
                     Type = MealType.Dinner,
@@ -764,7 +773,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Laks med avokado, ærter og sesam
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Laks med avokado, ærter og sesam",
                     Type = MealType.Dinner,
@@ -785,7 +794,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Laksefrikadeller med kikærter og kål
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Laksefrikadeller med kikærter og kål",
                     Type = MealType.Dinner,
@@ -809,7 +818,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Råsyltet laks med ingefær og lime
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Råsyltet laks med ingefær og lime",
                     Type = MealType.Dinner,
@@ -829,7 +838,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Æggepandekage med makrel, tomater og rugbrød
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Æggepandekage med makrel, tomater og rugbrød",
                     Type = MealType.Dinner,
@@ -848,7 +857,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Tun i wasabi med kål, mandler og agurker
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Tun i wasabi med kål, mandler og agurker",
                     Type = MealType.Dinner,
@@ -869,7 +878,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Torskerogn med surt, æg og salat
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Torskerogn med surt, æg og salat",
                     Type = MealType.Dinner,
@@ -892,7 +901,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Rejer med chili, grapefrugt og kål
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Rejer med chili, grapefrugt og kål",
                     Type = MealType.Dinner,
@@ -913,7 +922,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Torsk med sennepsrødder
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Torsk med sennepsrødder",
                     Type = MealType.Dinner,
@@ -938,7 +947,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Laks med urter, syrlige agurker og æg 
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Laks med urter, syrlige agurker og æg",
                     Type = MealType.Dinner,
@@ -960,7 +969,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kødsovs med paste
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kødsovs med paste",
                     Type = MealType.Dinner,
@@ -984,7 +993,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Chili con carne med skyr, æbler og sennep
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Chili con carne med skyr, æbler og sennep",
                     Type = MealType.Dinner,
@@ -1009,7 +1018,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Sprød torsk, råt grønt og sellericreme
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Sprød torsk, råt grønt og sellericreme",
                     Type = MealType.Dinner,
@@ -1030,7 +1039,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Grønt og rejer i rispapir
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Grønt og rejer i rispapir",
                     Type = MealType.Dinner,
@@ -1056,7 +1065,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Frikadeller med rug, ramsløg og salat
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Frikadeller med rug, ramsløg og salat",
                     Type = MealType.Dinner,
@@ -1082,7 +1091,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Torsk og tomatsalat
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Torsk og tomatsalat",
                     Type = MealType.Dinner,
@@ -1101,7 +1110,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Pizza med frisk grønt og kylligefilet
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Pizza med frisk grønt og kylligefilet",
                     Type = MealType.Dinner,
@@ -1120,7 +1129,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Forårsruller med kål og kød
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Forårsruller med kål og kød",
                     Type = MealType.Dinner,
@@ -1140,7 +1149,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Rodfrugter på panden med chorizopølser
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Rodfrugter på panden med chorizopølser",
                     Type = MealType.Dinner,
@@ -1157,7 +1166,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Dumblings med fisk og grønt, hertil råkost
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Dumblings med fisk og grønt, hertil råkost",
                     Type = MealType.Dinner,
@@ -1179,7 +1188,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kalv i øl og timian
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kalv i øl og timian",
                     Type = MealType.Dinner,
@@ -1201,7 +1210,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kartofler med æg og salat
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kartofler med æg og salat",
                     Type = MealType.Dinner,
@@ -1220,7 +1229,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Edamamebønner med spidskål og dild
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Edamamebønner med spidskål og dild",
                     Type = MealType.Dinner,
@@ -1239,7 +1248,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kotelet i fad med mynte, kartofler og appelsin
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kotelet i fad med mynte, kartofler og appelsin",
                     Type = MealType.Dinner,
@@ -1259,7 +1268,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Kød med syrlige kartofler og parmesan
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Kød med syrlige kartofler og parmesan",
                     Type = MealType.Dinner,
@@ -1277,7 +1286,7 @@ namespace MadplanVbkAsp.Data
                 });
 
                 // Fiskefilet med salat
-                dbContext.Recipes.InsertOne(new Recipe()
+                dbContext.Recipes.InsertOne(new Recipe(true)
                 {
                     Name = "Fiskefilet med salat",
                     Type = MealType.Dinner,

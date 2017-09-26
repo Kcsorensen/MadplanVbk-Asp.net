@@ -42,6 +42,7 @@ namespace SharedLib.Models
         public Guid Id { get; set; }
 
         public int FoodId { get; set; }
+        public bool IsProtected { get; set; }
 
         public string Name
         {
@@ -49,7 +50,7 @@ namespace SharedLib.Models
             set { SetValue(ref _name, value); }
         }
 
-        public QuantityConverter QuantityConverver { get; set; }
+        public QuantityConverter QuantityConverter { get; set; }
 
         public string DefaultQuantityType
         {
@@ -351,16 +352,18 @@ namespace SharedLib.Models
         public Food(bool use_this_when_not_deserializing)
         {
             Id = Guid.NewGuid();
+            IsProtected = false;
 
-            QuantityConverver = new QuantityConverter();
-            QuantityConverver.Quantities = new List<Quantity>();
+            QuantityConverter = new QuantityConverter();
+            //QuantityConverter.Quantities = new List<Quantity>();
 
-            foreach (var quantityType in QuantityType.Current.ListForQuantityConverter)
-            {
-                QuantityConverver.Quantities.Add(new Quantity() { Name = quantityType, Value = 0.0 });
-            }
+            //foreach (var quantityType in QuantityType.Current.ListForQuantityConverter)
+            //{
+            //    QuantityConverter.Quantities.Add(new Quantity() { Name = quantityType, Value = 0.0 });
+            //}
 
             DefaultQuantityType = QuantityType.gram;
+
         }
     }
 }

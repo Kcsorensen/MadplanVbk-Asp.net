@@ -1,4 +1,6 @@
+using AutoMapper;
 using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Extensions;
 using MadplanVbkAsp.Interfaces;
 using MadplanVbkAsp.Services;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +25,8 @@ namespace MadplanVbkAsp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -45,9 +49,9 @@ namespace MadplanVbkAsp
                 options.Cookie.Name = ".MadplanVBK";
             });
 
-            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
-            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:DatabaseName").Value;
-            MongoDbContext.IsSSL = Convert.ToBoolean(Configuration.GetSection("MongoConnection:IsSSL").Value);
+            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection2:ConnectionString").Value;
+            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection2:DatabaseName").Value;
+            MongoDbContext.IsSSL = Convert.ToBoolean(Configuration.GetSection("MongoConnection2:IsSSL").Value);
 
 
             // Register no-op EmailSender used by account confirmation and password reset during development
@@ -71,8 +75,8 @@ namespace MadplanVbkAsp
 
                 using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    //var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
-                    //context.EnsureSeedData();
+                    var context = serviceScope.ServiceProvider.GetService<MongoDbContext>();
+                    context.EnsureSeedData();
                 }
             }
             else

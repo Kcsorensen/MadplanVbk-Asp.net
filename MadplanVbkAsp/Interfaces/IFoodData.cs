@@ -11,5 +11,6 @@ namespace MadplanVbkAsp.Interfaces
         List<Food> GetAll();
         Food Get(int id);
         void Add(Food newFood);
+        void Remove(Guid id);
     }
 }

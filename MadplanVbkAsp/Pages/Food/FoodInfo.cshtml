@@ -1,0 +1,563 @@
+﻿@page "{id:Guid}"
+@model FoodInfoModel
+@{
+}
+
+<div class="col-sm-12">
+    <h3>@Model.Food.Name</h3>
+
+    <h4>Makronæringstoffer m.m.</h4>
+    <div class="border">
+        <table class="table table-sm table-striped" border="1">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Navn</th>
+                    <th class="aligncenter">Indhold pr. 100 g</th>
+                    <th class="aligncenter">Kilde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energi, kJ</td>
+                    <td class="aligncenter ">@Model.Food.EnergiKj <span>kJ</span></td>
+                    <td class="aligncenter "></td>
+                </tr>
+                <tr>
+                    <td>Energi, kcal</td>
+                    <td class="aligncenter">@Model.Food.EnergiKcal <span>kcal</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Protein, total</td>
+                    <td class="aligncenter">@Model.Food.ProteinTotal <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kulhydrat, total</td>
+                    <td class="aligncenter">@Model.Food.KulhydratDifferens <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kulhydrat, tilgængelig</td>
+                    <td class="aligncenter">@Model.Food.KulhydratTilgaengelig <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Tilsat sukker</td>
+                    <td class="aligncenter">@Model.Food.TilsatSukker <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kostfibre</td>
+                    <td class="aligncenter">@Model.Food.Kostfiber <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Fedt, total</td>
+                    <td class="aligncenter">@Model.Food.FedtTotal <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>total-N</td>
+                    <td class="aligncenter">@Model.Food.TotalN <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Alkohol</td>
+                    <td class="aligncenter">@Model.Food.Alkohol <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Cholesterol</td>
+                    <td class="aligncenter">@Model.Food.Cholesterol <span>mg</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Tørstof</td>
+                    <td class="aligncenter">@Model.Food.Torstof <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Vand</td>
+                    <td class="aligncenter">@Model.Food.Vand <span>g</span></td>
+                    <td class="aligncenter"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Vitaminer</h4>
+    <div class="border">
+        <table class="table table-sm table-striped" border="1">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Navn</th>
+                    <th class="aligncenter">Indhold pr. 100 g</th>
+                    <th class="aligncenter">Enhed</th>
+                    <th class="aligncenter">Kilde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A-vitamin</td>
+                    <td class="aligncenter">@Model.Food.Avitamin <span>RE</span></td>
+                    <td class="aligncenter">RE</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Retinol</td>
+                    <td class="aligncenter">@Model.Food.Retinol</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>ß-caroten</td>
+                    <td class="aligncenter">@Model.Food.Bcaroten</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>D-vitamin</td>
+                    <td class="aligncenter">@Model.Food.Dvitamin</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>D3 cholecalciferol</td>
+                    <td class="aligncenter">@Model.Food.D3cholecalciferol</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>E-vitamin</td>
+                    <td class="aligncenter">@Model.Food.Evitamin</td>
+                    <td class="aligncenter">α-TE</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Alfa-tokoferol</td>
+                    <td class="aligncenter">@Model.Food.AlfaTokoferol</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>K1-vitamin</td>
+                    <td class="aligncenter">@Model.Food.K1vitamin</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>B1-vitamin</td>
+                    <td class="aligncenter">@Model.Food.B1vitamin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>B2-vitamin, riboflavin</td>
+                    <td class="aligncenter">@Model.Food.B2vitaminRiboflavin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Niacin</td>
+                    <td class="aligncenter">@Model.Food.Niacin</td>
+                    <td class="aligncenter">NE</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Niacin 2</td>
+                    <td class="aligncenter">@Model.Food.Niacin2</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>B6-vitamin</td>
+                    <td class="aligncenter">@Model.Food.B6vitamin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Pantothensyre</td>
+                    <td class="aligncenter">@Model.Food.Pantothensyre</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Biotin</td>
+                    <td class="aligncenter">@Model.Food.Biotin</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Folat</td>
+                    <td class="aligncenter">@Model.Food.Folat</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Frit folat</td>
+                    <td class="aligncenter">@Model.Food.FritFolat</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>B12-vitamin</td>
+                    <td class="aligncenter">@Model.Food.B12vitamin</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>C-vitamin</td>
+                    <td class="aligncenter">@Model.Food.Cvitamin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>L-ascorbinsyre</td>
+                    <td class="aligncenter">@Model.Food.Lascorbinsyre</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>L-dehydroascorbinsyre</td>
+                    <td class="aligncenter">@Model.Food.Ldehydroascorbinsyre</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <h4>Mineraler og uorganisk</h4>
+    <div class="border">
+        <table class="table table-sm table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Navn</th>
+                    <th class="aligncenter">Indhold pr. 100 g</th>
+                    <th class="aligncenter">Enhed</th>
+                    <th class="aligncenter">Kilde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Natrium, Na</td>
+                    <td class="aligncenter">@Model.Food.Natrium</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kalium, K</td>
+                    <td class="aligncenter">@Model.Food.Kalium</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Calcium, Ca</td>
+                    <td class="aligncenter">@Model.Food.Calcium</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Magnesium, Mg</td>
+                    <td class="aligncenter">@Model.Food.Magnesium</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Phosphor, P</td>
+                    <td class="aligncenter">@Model.Food.Phosphor</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Jern, Fe</td>
+                    <td class="aligncenter">@Model.Food.Jern</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kobber, Cu</td>
+                    <td class="aligncenter">@Model.Food.Kobber</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Zink, Zn</td>
+                    <td class="aligncenter">@Model.Food.Zink</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Jod, I</td>
+                    <td class="aligncenter">@Model.Food.Jod</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Mangan, Mn</td>
+                    <td class="aligncenter">@Model.Food.Mangan</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Chrom, Cr</td>
+                    <td class="aligncenter">@Model.Food.Chrom</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Selen, Se</td>
+                    <td class="aligncenter">@Model.Food.Selen</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Molybdæn, Mo</td>
+                    <td class="aligncenter">@Model.Food.Molybdbaen</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Nikkel, Ni</td>
+                    <td class="aligncenter">@Model.Food.Nikkel</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Kviksølv, Hg</td>
+                    <td class="aligncenter">@Model.Food.Kviksolv</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Arsen, As</td>
+                    <td class="aligncenter">@Model.Food.Arsen</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Cadmium, Cd</td>
+                    <td class="aligncenter">@Model.Food.Cadmium</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Bly, Pb</td>
+                    <td class="aligncenter">@Model.Food.Bly</td>
+                    <td class="aligncenter">µg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <h4>Fedtsyrer</h4>
+    <div class="border">
+        <table class="table table-sm table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Navn</th>
+                    <th class="aligncenter">Indhold pr. 100 g</th>
+                    <th class="aligncenter">Enhed</th>
+                    <th class="aligncenter">Kilde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sum mættede</td>
+                    <td class="aligncenter">@Model.Food.SumMaettedeFedtsyrer</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Sum monoumættede</td>
+                    <td class="aligncenter">@Model.Food.SumMonoumaettedeFedtsyrer</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Sum polyumættede</td>
+                    <td class="aligncenter">@Model.Food.SumPolymaettedeFedtsyrer</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Fedtsyrer, total</td>
+                    <td class="aligncenter">@Model.Food.FedtsyrerTotal</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Sum n-3 fedtsyrer</td>
+                    <td class="aligncenter">@Model.Food.Sumn3Fedtsyrer</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Sum n-6 fedtsyrer</td>
+                    <td class="aligncenter">@Model.Food.Sumn6Fedtsyrer</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Transfedtsyrer, total</td>
+                    <td class="aligncenter">@Model.Food.TransFedtsyrerTotal</td>
+                    <td class="aligncenter">g</td>
+                    <td class="aligncenter"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <h4>Aminosyrer</h4>
+    <div class="border">
+        <table class="table table-sm table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Navn</th>
+                    <th class="aligncenter">Indhold pr. 100 g</th>
+                    <th class="aligncenter">Enhed</th>
+                    <th class="aligncenter">Kilde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Isoleucin</td>
+                    <td class="aligncenter">@Model.Food.Isoleucin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Leucin</td>
+                    <td class="aligncenter">@Model.Food.Leucin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Lysin</td>
+                    <td class="aligncenter">@Model.Food.Lysin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Methionin</td>
+                    <td class="aligncenter">@Model.Food.Methionin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Cystin</td>
+                    <td class="aligncenter">@Model.Food.Cystin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Phenylalanin</td>
+                    <td class="aligncenter">@Model.Food.Phenylalanin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Tyrosin</td>
+                    <td class="aligncenter">@Model.Food.Tyrosin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Threonin</td>
+                    <td class="aligncenter">@Model.Food.Threonin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Tryptofan</td>
+                    <td class="aligncenter">@Model.Food.Tryptofan</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Valin</td>
+                    <td class="aligncenter">@Model.Food.Valin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Arginin</td>
+                    <td class="aligncenter">@Model.Food.Arginin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Histidin</td>
+                    <td class="aligncenter">@Model.Food.Histidin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Alanin</td>
+                    <td class="aligncenter">@Model.Food.Alanin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Asparaginsyre</td>
+                    <td class="aligncenter">@Model.Food.Asparaginsyre</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Glutaminsyre</td>
+                    <td class="aligncenter">@Model.Food.Glutaminsyre</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Glycin</td>
+                    <td class="aligncenter">@Model.Food.Glycin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Prolin</td>
+                    <td class="aligncenter">@Model.Food.Prolin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+                <tr>
+                    <td>Serin</td>
+                    <td class="aligncenter">@Model.Food.Serin</td>
+                    <td class="aligncenter">mg</td>
+                    <td class="aligncenter"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<style>
+    h4 {
+        margin-top: 30px;
+    }
+
+    .table {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    .table thead > tr > th:first-child {
+        width: 400px;
+    }
+
+    .nostretch {
+        width: 1%;
+        white-space: nowrap;
+    }
+</style>
+
+
+

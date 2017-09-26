@@ -27,13 +27,13 @@ namespace SharedLib.Models
             IsProtected = false;
         }
 
-        //public Recipe(bool use_this)
-        //{
-        //    Id = Guid.NewGuid();
-        //    Type = "Vælg";
-        //    DefaultQuantityType = QuantityType.gram;
-        //    Ingredients = new ObservableCollection<Ingredient>();
-        //    IsProtected = false;
-        //}
+        public Recipe(bool isProtected)
+        {
+            Id = Guid.NewGuid();
+            Type = "Vælg";
+            DefaultQuantityType = QuantityType.gram;
+            Ingredients = new ObservableCollection<Ingredient>();
+            IsProtected = true;
+        }
     }
 }

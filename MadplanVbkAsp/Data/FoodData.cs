@@ -13,6 +13,8 @@ namespace MadplanVbkAsp.Data
 {
     public class FoodData : IFoodData
     {
+        private MongoDbContext dbContext = new MongoDbContext();
+
         public FoodData()
         {
 
@@ -26,6 +28,12 @@ namespace MadplanVbkAsp.Data
         public Food Get(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void Remove(Guid id)
+        {
+            var filter = Builders<Food>.Filter.Eq("Id", id);
+            dbContext.Foods.DeleteOne(filter);
         }
 
         public List<Food> GetAll()
@@ -60,6 +68,7 @@ namespace MadplanVbkAsp.Data
                         dbContext.Foods.InsertOne(new Food(true)
                         {
                             Name = csv.GetField<string>(0),
+                            IsProtected = true,
                             FoodId = csv.GetField<int>(1),
                             Svind = csv.GetField<string>(2),
                             EnergiKj = csv.GetField<string>(3),

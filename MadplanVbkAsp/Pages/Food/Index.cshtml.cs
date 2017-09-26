@@ -1,26 +1,35 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MadplanVbkAsp.Interfaces;
-using SharedLib.Models;
+using System;
+using System.Collections.Generic;
 
 namespace MadplanVbkAsp.Pages.Food
 {
     public class IndexModel : PageModel
     {
+        private IFoodData _foodData;
+
         public List<SharedLib.Models.Food> Foods { get; set; }
 
         public IndexModel(IFoodData foodData)
         {
+            _foodData = foodData;
+
             Foods = foodData.GetAll();
         }
 
         public void OnGet()
         {
 
+        }
+
+        public ActionResult OnPostDeleteFood(Guid id)
+        {
+            _foodData.Remove(id);
+
+            return RedirectToPage("./Index");
         }
     }
 }

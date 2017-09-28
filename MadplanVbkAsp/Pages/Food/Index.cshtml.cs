@@ -1,4 +1,5 @@
 using MadplanVbkAsp.Data;
+using MadplanVbkAsp.Extensions;
 using MadplanVbkAsp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -30,6 +31,15 @@ namespace MadplanVbkAsp.Pages.Food
             _foodData.Remove(id);
 
             return RedirectToPage("./Index");
+        }
+
+        public ActionResult OnPostExport()
+        {
+            var excelHelper = new ExcelHelper();
+
+            var stream = excelHelper.GetXlsxStream();
+
+            return File(stream, "application/octet-stream", "ExcelDB.xlsx");
         }
     }
 }

@@ -5,15 +5,18 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\FoodDatabase.csv" />
+    <None Remove="Resources\Skabelon.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="CsvHelper" Version="2.16.3" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" PrivateAssets="All" />
     <PackageReference Include="MongoDB.Bson" Version="2.4.4" />
     <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
+    <PackageReference Include="PdfRpt.Core" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
@@ -22,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\FoodDatabase.csv" />
+    <EmbeddedResource Include="Resources\Skabelon.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharedLib\SharedLib.csproj" />
